@@ -2,13 +2,14 @@
 @using Syncfusion.Blazor.Grids
 
 <h3>EmployeeManagment</h3>
-// Grid with all the employee information
+ <!--Grid with all the employee information -->
 <div style="max-width:900px">
-    <SfGrid DataSource="employeeData" AllowPaging="true" Toolbar="@toolbar" AllowGrouping="true" AllowFiltering="true">
+    <SfGrid DataSource="employeeData" AllowPaging="true" AllowSorting="true" Toolbar="@toolbar" AllowGrouping="true" AllowFiltering="true">
+        <GridEditSettings AllowAdding="true" AllowEditing="true" AllowDeleting="true"></GridEditSettings>
         <GridPageSettings PageSize="10"></GridPageSettings>
         <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
         <GridColumns>
-            <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id"/>
+            <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id" IsPrimaryKey="true"/>
             <GridColumn Field="@nameof(EmployeeModel.FirstName)" HeaderText="Name"/>
             <GridColumn Field="@nameof(EmployeeModel.Surname)" HeaderText="Surname"/>
             <GridColumn Field="@nameof(EmployeeModel.JobTitle)" HeaderText="Job"/>
@@ -20,7 +21,7 @@
 </div>
 @code {
     private List<EmployeeModel>? employeeData = null;
-    private List<object> toolbar = new List<object> { "Search" }; // Search bar in the grid 
+    private List<object> toolbar = new List<object> { "Add", "Update", "Cancel", "Edit", "Delete" ,"Search" }; // Search bar in the grid 
     protected override void OnInitialized()
     {
         //SM
