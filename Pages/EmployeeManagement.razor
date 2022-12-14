@@ -2,15 +2,25 @@
 @using Syncfusion.Blazor.Grids
 
 <h3>EmployeeManagment</h3>
-
-<div style="max-width:600px">
-    <SfGrid DataSource="employeeData">
-
+// Grid with all the employee information
+<div style="max-width:900px">
+    <SfGrid DataSource="employeeData" AllowPaging="true" Toolbar="@toolbar" AllowGrouping="true" AllowFiltering="true">
+        <GridPageSettings PageSize="10"></GridPageSettings>
+        <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+        <GridColumns>
+            <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id"/>
+            <GridColumn Field="@nameof(EmployeeModel.FirstName)" HeaderText="Name"/>
+            <GridColumn Field="@nameof(EmployeeModel.Surname)" HeaderText="Surname"/>
+            <GridColumn Field="@nameof(EmployeeModel.JobTitle)" HeaderText="Job"/>
+            <GridColumn Field="@nameof(EmployeeModel.Gender)" HeaderText="Gender"/>
+            <GridColumn Field="@nameof(EmployeeModel.DateOfBirth)" HeaderText="Birth" Width="100px" Format="d"/>
+            <GridColumn Field="@nameof(EmployeeModel.ReportToEmpId)" HeaderText="Reports"/>
+        </GridColumns>
     </SfGrid>
 </div>
 @code {
     private List<EmployeeModel>? employeeData = null;
-
+    private List<object> toolbar = new List<object> { "Search" }; // Search bar in the grid 
     protected override void OnInitialized()
     {
         //SM
