@@ -10,6 +10,6 @@
         public DateTime DateOfBirth { get; set; }
         public int? ReportToEmpId { get; set; }
         public string ImagePath { get; set; }
-        public int EmployeeJobTitleId { get; set; }
+        public int EmployeeTitleId { get; set; }
     }
 }
