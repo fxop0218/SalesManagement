@@ -36,13 +36,32 @@
                 </EditTemplate>
 
             </GridForeignColumn>
-            <GridColumn Field="@nameof(EmployeeModel.Gender)" HeaderText="Gender"/>
+            <GridColumn Field="@nameof(EmployeeModel.Gender)" HeaderText="Gender">
+                <EditTemplate>
+                    <SfDropDownList DataSource="genderCollection"
+                        TItem="string"
+                        TValue="string"
+                        @bind-Value = "((context as EmployeeModel).Gender)">
+
+                    </SfDropDownList>
+                </EditTemplate>
+            </GridColumn>
             <GridColumn Field="@nameof(EmployeeModel.DateOfBirth)" HeaderText="Birth" Width="100px" Format="d"/>
             <GridColumn Field="@nameof(EmployeeModel.ReportToEmpId)" HeaderText="Reports"/>
         </GridColumns>
     </SfGrid>
 </div>
 @code {
+    // Set all the genders
+    private enum GenderVal
+    {
+        Male,
+        Famale, 
+        Other
+    }
+
+    // Transform GenderVal into array
+    private string[] genderCollection = Enum.GetNames(typeof(GenderVal));
     private List<EmployeeModel>? employeeData = null;
     private List<EmployeeJobTitle>? employeeTitleData;
     // private List<object> toolbar = new List<object> { "Add", "Update", "Cancel", "Edit", "Delete" ,"Search" }; // Search bar in the grid 
