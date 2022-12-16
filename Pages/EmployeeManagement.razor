@@ -14,7 +14,17 @@
     <SfGrid DataSource="employeeData">
         <GridColumns>
             <GridEditSettings AllowEditing="true"></GridEditSettings>
-            <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id" IsPrimaryKey="true"/>
+            <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id" IsPrimaryKey="true" Width="30px"/>
+            <GridColumn HeaderText="Image Profile" Width="130px">
+                <Template>
+                    @{
+                        var employee = (context as EmployeeModel);
+                        <div class="profile-image-container">
+                            <img src="@(employee?.ImagePath)">
+                        </div>
+                    }
+                </Template>
+            </GridColumn>
             <GridColumn Field="@nameof(EmployeeModel.FirstName)" HeaderText="Name"/>
             <GridColumn Field="@nameof(EmployeeModel.Surname)" HeaderText="Surname"/>
             <GridForeignColumn HeaderText="Designation"
@@ -67,6 +77,18 @@
         </GridColumns>
     </SfGrid>
 </div>
+<style>
+    .profile-image-container{
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-image-container img{
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+    }
+</style>
 @code {
     // Set all the genders
     private enum GenderVal

@@ -5,6 +5,70 @@
       "PackagePath": "staticwebassets\\SalesManagment.bundle.scp.css"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\AngelaMoore.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\AngelaMoore.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\AvaWilliams.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\AvaWilliams.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\BenjaminLucas.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\BenjaminLucas.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\BobJones.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\BobJones.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\ElijahHamilton.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\ElijahHamilton.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\EmmaLee.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\EmmaLee.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\FamaleDefault.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\FamaleDefault.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\HenryAndrews.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\HenryAndrews.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\JamieFisher.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\JamieFisher.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\JohnJameson.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\JohnJameson.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\MaleDefault.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\MaleDefault.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\NoahRobinson.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\NoahRobinson.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\OliviaMills.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\OliviaMills.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\Profile12_Woman.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\Profile12_Woman.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\Profile5_Woman.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\Profile5_Woman.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\SarahHenderson.jpg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\SarahHenderson.jpg"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },

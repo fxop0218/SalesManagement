@@ -17,4 +17,8 @@
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="20.3.0.61" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\Profile\" />
+  </ItemGroup>
+
 </Project>
