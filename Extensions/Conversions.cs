@@ -6,7 +6,7 @@ namespace SalesManagment.Extensions
 {
     public static class Conversions
     {
-        public static async Task<List<EmployeeModel>> Convert(this IQueryable<Entities.Employee> employees)
+        public static async Task<List<EmployeeModel>> Convert(this IQueryable<Employee> employees)
         {
             return await (from e in employees
                           select new EmployeeModel

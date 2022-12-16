@@ -1,9 +1,10 @@
 ﻿using SalesManagment.Entities;
+using SalesManagment.Models;
 
 namespace SalesManagment.Services.Contracts
 {
     public interface IEmployeeManagementService
     {
-        Task<List<Employee>> GetEmployees();
+        Task<List<EmployeeModel>> GetEmployees();
     }
 }

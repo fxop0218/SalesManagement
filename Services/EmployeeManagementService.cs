@@ -2,6 +2,7 @@
 using SalesManagment.Data;
 using SalesManagment.Entities;
 using SalesManagment.Extensions;
+using SalesManagment.Models;
 using SalesManagment.Services.Contracts;
 
 namespace SalesManagment.Services
@@ -13,13 +14,13 @@ namespace SalesManagment.Services
         {
             this.applicationDbContext = applicationDbContext;
         }
-        public async Task<List<Employee>> GetEmployees()
+        public async Task<List<EmployeeModel>> GetEmployees()
         {
             try
             {
                 return await this.applicationDbContext.Employees.Convert();
             } 
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

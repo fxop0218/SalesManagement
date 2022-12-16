@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 using SalesManagment.Data;
+using SalesManagment.Services;
+using SalesManagment.Services.Contracts;
 using Syncfusion.Blazor; // Imported
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 // Necesary to use blazer sync fusion
 builder.Services.AddSyncfusionBlazor();
+
+builder.Services.AddScoped<IEmployeeManagementService, EmployeeManagementService>();
 
 var app = builder.Build();
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("licence");
