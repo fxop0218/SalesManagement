@@ -6,6 +6,7 @@
 @using Syncfusion.Blazor;
 @using Syncfusion.Blazor.DropDowns
 @using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Spinner;
 
 @inject IEmployeeManagementService EmployeeManagementService;
 <h3>EmployeeManagment</h3>
@@ -14,7 +15,7 @@
     <SfGrid DataSource="employeeData">
         <GridColumns>
             <GridEditSettings AllowEditing="true"></GridEditSettings>
-            <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id" IsPrimaryKey="true" Width="30px"/>
+            <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id" IsPrimaryKey="true" Width="40px"/>
             <GridColumn HeaderText="Image Profile" Width="130px">
                 <Template>
                     @{
@@ -75,6 +76,7 @@
             </GridForeignColumn>
             <GridColumn Field="@nameof(EmployeeModel.DateOfBirth)" HeaderText="Birth" Width="100px" Format="d"/>
         </GridColumns>
+        <SfSpinner @bind-Visible = "@VisibleProp"></SfSpinner>
     </SfGrid>
 </div>
 <style>
@@ -90,6 +92,8 @@
     }
 </style>
 @code {
+
+    private bool VisibleProp { get; set; }
     // Set all the genders
     private enum GenderVal
     {
@@ -107,8 +111,12 @@
 
     protected override async Task OnInitializedAsync()
     {
+        VisibleProp = true; 
         employeeData = await EmployeeManagementService.GetEmployees();
         employeeTitleData = await EmployeeManagementService.GetEmployeeJobTitle();
         reportToEmployeeData = await EmployeeManagementService.GetEmployeeReportTo();
+
+        await Task.Delay(2500);
+        VisibleProp = false;
     }
 }
