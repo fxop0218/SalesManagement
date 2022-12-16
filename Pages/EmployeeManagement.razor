@@ -46,8 +46,24 @@
                     </SfDropDownList>
                 </EditTemplate>
             </GridColumn>
+            <GridForeignColumn HeaderText="Reports To"
+                    TValue="ReportToModel"
+                    Field="@nameof(EmployeeModel.ReportToEmpId)"
+                    ForeignDataSource="reportToEmployeeData"
+                    ForeignKeyValue="ReportToName" Width="130px">
+                <EditTemplate>
+                    <SfDropDownList @bind-value = "@((context as EmployeeModel).ReportToEmpId)"
+                        ID = "ReportToEmpId"
+                        DataSource="reportToEmployeeData"
+                        TItem="ReportToModel"
+                        TValue="Nullable<int>">
+                        <DropDownListFieldSettings Text="ReportToName" Value="ReportToEmpId">
+                        </DropDownListFieldSettings>
+                    </SfDropDownList>
+                </EditTemplate>
+
+            </GridForeignColumn>
             <GridColumn Field="@nameof(EmployeeModel.DateOfBirth)" HeaderText="Birth" Width="100px" Format="d"/>
-            <GridColumn Field="@nameof(EmployeeModel.ReportToEmpId)" HeaderText="Reports"/>
         </GridColumns>
     </SfGrid>
 </div>
@@ -64,11 +80,13 @@
     private string[] genderCollection = Enum.GetNames(typeof(GenderVal));
     private List<EmployeeModel>? employeeData = null;
     private List<EmployeeJobTitle>? employeeTitleData;
+    private List<ReportToModel>? reportToEmployeeData;
     // private List<object> toolbar = new List<object> { "Add", "Update", "Cancel", "Edit", "Delete" ,"Search" }; // Search bar in the grid 
 
     protected override async Task OnInitializedAsync()
     {
         employeeData = await EmployeeManagementService.GetEmployees();
         employeeTitleData = await EmployeeManagementService.GetEmployeeJobTitle();
+        reportToEmployeeData = await EmployeeManagementService.GetEmployeeReportTo();
     }
 }
