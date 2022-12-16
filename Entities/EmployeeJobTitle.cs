@@ -1,8 +1,11 @@
-﻿namespace SalesManagment.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SalesManagment.Entities
 {
     public class EmployeeJobTitle
     {
-        public int EmployeeJobTitleId { get; set; }
+        [Key]
+        public int EmployeeTitleId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; } 
 

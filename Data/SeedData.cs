@@ -10,21 +10,21 @@ namespace SalesManagment.Data
             //Add Employee Job Titles
             modelBuilder.Entity<EmployeeJobTitle>().HasData(new EmployeeJobTitle
             {
-                EmployeeJobTitleId = 1,
+                EmployeeTitleId = 1,
                 Name = "SM",
                 Description = "Sales Manager"
 
             });
             modelBuilder.Entity<EmployeeJobTitle>().HasData(new EmployeeJobTitle
             {
-                EmployeeJobTitleId = 2,
+                EmployeeTitleId = 2,
                 Name = "TL",
                 Description = "Team Leader"
 
             });
             modelBuilder.Entity<EmployeeJobTitle>().HasData(new EmployeeJobTitle
             {
-                EmployeeJobTitleId = 3,
+                EmployeeTitleId = 3,
                 Name = "SR",
                 Description = "Sales Rep"
 

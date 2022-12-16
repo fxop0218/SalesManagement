@@ -2,6 +2,10 @@
 @using SalesManagment.Models;
 @using SalesManagment.Services.Contracts;
 @using Syncfusion.Blazor.Grids
+@using SalesManagment.Entities;
+@using Syncfusion.Blazor;
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Inputs
 
 @inject IEmployeeManagementService EmployeeManagementService;
 <h3>EmployeeManagment</h3>
@@ -9,10 +13,29 @@
 <div style="max-width:900px">
     <SfGrid DataSource="employeeData">
         <GridColumns>
+            <GridEditSettings AllowEditing="true"></GridEditSettings>
             <GridColumn Field="@nameof(EmployeeModel.Id)" HeaderText="Id" IsPrimaryKey="true"/>
             <GridColumn Field="@nameof(EmployeeModel.FirstName)" HeaderText="Name"/>
             <GridColumn Field="@nameof(EmployeeModel.Surname)" HeaderText="Surname"/>
-            <GridColumn Field="@nameof(EmployeeModel.EmployeeTitleId)" HeaderText="Job"/>
+            <GridForeignColumn HeaderText="Designation"
+                    TValue="EmployeeJobTitle"
+                    Field="@nameof(EmployeeModel.EmployeeTitleId)"
+                    ForeignDataSource="employeeTitleData"
+                    ForeignKeyValue="Name" Width="100px">
+                <EditTemplate>
+                    <SfDropDownList @bind-value = "@((context as EmployeeModel).EmployeeTitleId)"
+                        ID = "EmployeeTitleId"
+                        DataSource="employeeTitleData"
+                        TItem = "EmployeeJobTitle"
+                        TValue="int">
+                    <DropDownListFieldSettings Text="Name" Value="EmployeeTitleId">
+
+                    </DropDownListFieldSettings>
+
+                    </SfDropDownList>
+                </EditTemplate>
+
+            </GridForeignColumn>
             <GridColumn Field="@nameof(EmployeeModel.Gender)" HeaderText="Gender"/>
             <GridColumn Field="@nameof(EmployeeModel.DateOfBirth)" HeaderText="Birth" Width="100px" Format="d"/>
             <GridColumn Field="@nameof(EmployeeModel.ReportToEmpId)" HeaderText="Reports"/>
@@ -21,10 +44,12 @@
 </div>
 @code {
     private List<EmployeeModel>? employeeData = null;
+    private List<EmployeeJobTitle>? employeeTitleData;
     // private List<object> toolbar = new List<object> { "Add", "Update", "Cancel", "Edit", "Delete" ,"Search" }; // Search bar in the grid 
 
     protected override async Task OnInitializedAsync()
     {
         employeeData = await EmployeeManagementService.GetEmployees();
+        employeeTitleData = await EmployeeManagementService.GetEmployeeJobTitle();
     }
 }

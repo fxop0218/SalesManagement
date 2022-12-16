@@ -12,8 +12,8 @@ using SalesManagment.Data;
 namespace SalesManagment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221214181545_SeedEmployeeData")]
-    partial class SeedEmployeeData
+    [Migration("20221216183017_newDb")]
+    partial class newDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -226,11 +226,11 @@ namespace SalesManagment.Migrations
 
             modelBuilder.Entity("SalesManagment.Entities.EmployeeJobTitle", b =>
                 {
-                    b.Property<int>("EmployeeJobTitleId")
+                    b.Property<int>("EmployeeTitleId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeJobTitleId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeTitleId"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -240,26 +240,26 @@ namespace SalesManagment.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EmployeeJobTitleId");
+                    b.HasKey("EmployeeTitleId");
 
                     b.ToTable("EmployeeJobTitles");
 
                     b.HasData(
                         new
                         {
-                            EmployeeJobTitleId = 1,
+                            EmployeeTitleId = 1,
                             Description = "Sales Manager",
                             Name = "SM"
                         },
                         new
                         {
-                            EmployeeJobTitleId = 2,
+                            EmployeeTitleId = 2,
                             Description = "Team Leader",
                             Name = "TL"
                         },
                         new
                         {
-                            EmployeeJobTitleId = 3,
+                            EmployeeTitleId = 3,
                             Description = "Sales Rep",
                             Name = "SR"
                         });

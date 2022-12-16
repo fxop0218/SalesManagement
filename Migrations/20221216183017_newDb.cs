@@ -8,19 +8,48 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SalesManagment.Migrations
 {
     /// <inheritdoc />
-    public partial class SeedEmployeeData : Migration
+    public partial class newDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "JobTitle",
-                table: "Employees",
-                newName: "Email");
+            migrationBuilder.CreateTable(
+                name: "EmployeeJobTitles",
+                columns: table => new
+                {
+                    EmployeeTitleId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EmployeeJobTitles", x => x.EmployeeTitleId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Employees",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ReportToEmpId = table.Column<int>(type: "int", nullable: true),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmployeeTitleId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employees", x => x.Id);
+                });
 
             migrationBuilder.InsertData(
                 table: "EmployeeJobTitles",
-                columns: new[] { "EmployeeJobTitleId", "Description", "Name" },
+                columns: new[] { "EmployeeTitleId", "Description", "Name" },
                 values: new object[,]
                 {
                     { 1, "Sales Manager", "SM" },
@@ -52,90 +81,11 @@ namespace SalesManagment.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
-                table: "EmployeeJobTitles",
-                keyColumn: "EmployeeJobTitleId",
-                keyValue: 1);
+            migrationBuilder.DropTable(
+                name: "EmployeeJobTitles");
 
-            migrationBuilder.DeleteData(
-                table: "EmployeeJobTitles",
-                keyColumn: "EmployeeJobTitleId",
-                keyValue: 2);
-
-            migrationBuilder.DeleteData(
-                table: "EmployeeJobTitles",
-                keyColumn: "EmployeeJobTitleId",
-                keyValue: 3);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 1);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 2);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 3);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 4);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 5);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 6);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 7);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 8);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 9);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 10);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 11);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 12);
-
-            migrationBuilder.DeleteData(
-                table: "Employees",
-                keyColumn: "Id",
-                keyValue: 13);
-
-            migrationBuilder.RenameColumn(
-                name: "Email",
-                table: "Employees",
-                newName: "JobTitle");
+            migrationBuilder.DropTable(
+                name: "Employees");
         }
     }
 }

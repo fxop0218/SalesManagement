@@ -14,6 +14,20 @@ namespace SalesManagment.Services
         {
             this.applicationDbContext = applicationDbContext;
         }
+
+        public async Task<List<EmployeeJobTitle>> GetEmployeeJobTitle()
+        {
+            try
+            {
+                return await this.applicationDbContext.EmployeeJobTitles.ToListAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<List<EmployeeModel>> GetEmployees()
         {
             try
