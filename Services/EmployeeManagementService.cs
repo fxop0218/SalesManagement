@@ -23,6 +23,7 @@ namespace SalesManagment.Services
                 Employee NewEmployee = employeeModel.Convert();
                 // Save the infromation of the employee
                 var res = await this.applicationDbContext.Employees.AddAsync(NewEmployee);
+                await this.applicationDbContext.SaveChangesAsync(); // Save the changes
                 return res.Entity;
             }
             catch (Exception)

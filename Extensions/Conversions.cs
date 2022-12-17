@@ -33,8 +33,8 @@ namespace SalesManagment.Extensions
                 DateOfBirth = employeeModel.DateOfBirth,
                 ReportToEmpId = employeeModel.ReportToEmpId,
                 Gender = employeeModel.Gender,
-                ImagePath = employeeModel.Gender.ToUpper() == "MALE" ? "/Images/Profile/MaleDefault.jpg" :
-                                                              "/Images/Profile/FamaleDefault.jpg"
+                ImagePath = employeeModel.Gender.ToUpper() == "MALE" ? "/Images/Profile/MaleDefault.jpg"
+                                                                    : "/Images/Profile/FamaleDefault.jpg"
             };
         }
     }

@@ -16,8 +16,7 @@
         <GridColumns>
             <GridEditSettings AllowEditing="true" 
                                 AllowAdding="true" 
-                                AllowDeleting="true" 
-                                AllowEditOnDblClick="true"></GridEditSettings> <!--Allow to edit, delete, and create new fields-->
+                                AllowDeleting="true"></GridEditSettings> <!--Allow to edit, delete, and create new fields-->
 
             <GridColumn Field="@nameof(EmployeeModel.Id)" 
                                 HeaderText="Id" IsPrimaryKey="true" Width="40px"
@@ -58,17 +57,8 @@
                 </EditTemplate>
 
             </GridForeignColumn>
-            <GridColumn Field="@nameof(EmployeeModel.Gender)" HeaderText="Gender" Width="100px">
-                <EditTemplate>
-                    <SfDropDownList DataSource="genderCollection"
-                        TItem="string"
-                        TValue="string"
-                        @bind-Value = "((context as EmployeeModel).Gender)">
-
-                    </SfDropDownList>
-                </EditTemplate>
-            </GridColumn>
             <GridColumn Field="@nameof(EmployeeModel.Email)" Width="180px"></GridColumn>
+            <GridColumn Field="@nameof(EmployeeModel.DateOfBirth)" HeaderText="Birth" Width="100px" Format="d"/>
             <GridForeignColumn HeaderText="Reports To"
                     TValue="ReportToModel"
                     Field="@nameof(EmployeeModel.ReportToEmpId)"
@@ -86,7 +76,16 @@
                 </EditTemplate>
 
             </GridForeignColumn>
-            <GridColumn Field="@nameof(EmployeeModel.DateOfBirth)" HeaderText="Birth" Width="100px" Format="d"/>
+            <GridColumn Field="@nameof(EmployeeModel.Gender)" HeaderText="Gender" Width="100px">
+                <EditTemplate>
+                    <SfDropDownList DataSource="genderCollection"
+                        TItem="string"
+                        TValue="string"
+                        @bind-Value = "((context as EmployeeModel).Gender)">
+
+                    </SfDropDownList>
+                </EditTemplate>
+            </GridColumn>
         </GridColumns>
         <SfSpinner @bind-Visible = "@VisibleProp"></SfSpinner>
     </SfGrid>
