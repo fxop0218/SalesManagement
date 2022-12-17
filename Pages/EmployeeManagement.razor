@@ -6,13 +6,15 @@
 @using Syncfusion.Blazor;
 @using Syncfusion.Blazor.DropDowns
 @using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Navigations.Internal;
+@using Syncfusion.Blazor.Navigations;
 @using Syncfusion.Blazor.Spinner;
 
 @inject IEmployeeManagementService EmployeeManagementService;
 <h3>EmployeeManagment</h3>
  <!--Grid with all the employee information -->
 <div style="max-width:1200px">
-    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData" Toolbar="@toolbar" AllowSorting="true" AllowExcelExport="true"> <!--Toolbar with the acctions-->
+    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData" Toolbar="@toolbar" AllowSorting="true" AllowExcelExport="true" AllowPdfExport="true"> <!--Toolbar with the acctions-->
         <GridColumns>
             <GridEditSettings AllowEditing="true" 
                                 AllowAdding="true" 
@@ -25,15 +27,16 @@
             <GridEvents OnActionBegin="ActionBeginHandler" 
                         OnActionComplete="ActionCompletedHandler"
                         OnToolbarClick="ActionDownloadExcel"
+                        CommandClicked="OnCommandClicked"
                         TValue="EmployeeModel"></GridEvents> <!-- Event listener -->
 
             <GridColumn HeaderText="Image Profile" Width="130px">
                 <Template>
                     @{
                         var employee = (context as EmployeeModel);
-                        <div class="profile-image-container">
-                            <img src="@(employee?.ImagePath)">
-                        </div>
+                            <div class="profile-image-container">
+                                <img src="@(employee?.ImagePath)">
+                            </div>
                     }
                 </Template>
             </GridColumn>
@@ -87,6 +90,48 @@
                     </SfDropDownList>
                 </EditTemplate>
             </GridColumn>
+            <GridColumn HeaderText="Operatioins">
+                <GridCommandColumns>
+                    <GridCommandColumn Type="CommandButtonType.Delete" ButtonOption="@(new CommandButtonOptions() {
+                                            IconCss = "e-icons e-delete",
+                                            CssClass = "e-flat"
+                                        })">
+                    </GridCommandColumn>
+                    <GridCommandColumn Type="CommandButtonType.Edit" ButtonOption="@(new CommandButtonOptions() {
+                                            IconCss = "e-icons e-edit",
+                                            CssClass = "e-flat"
+                                        })">
+                    </GridCommandColumn>
+                    <GridCommandColumn Type="CommandButtonType.Cancel" ButtonOption="@(new CommandButtonOptions() {
+                                            IconCss = "e-icons e-cancel-icon",
+                                            CssClass = "e-flat"
+                                        })">
+                    </GridCommandColumn>
+                    <GridCommandColumn Type="CommandButtonType.Save" ButtonOption="@(new CommandButtonOptions() {
+                                            IconCss = "e-icons e-save",
+                                            CssClass = "e-flat"
+                                        })">
+                    </GridCommandColumn>
+                </GridCommandColumns>
+            </GridColumn>
+             <!--
+            <GridColumn HeaderText="Custion operations" Width="110px">
+                <GridCommandColumns>
+                    <GridCommandColumn Type="CommandButtonType.Edit"
+                                                ButtonOption="@(new CommandButtonOptions() {
+                                                                        Content = "O1",
+                                                                        CssClass = "e-outline",
+                                                                })">
+                    </GridCommandColumn>
+                    <GridCommandColumn Type="CommandButtonType.Edit"
+                                                ButtonOption="@(new CommandButtonOptions() {
+                                                                        Content = "O2",
+                                                                        CssClass = "e-outline",
+                                                                })">
+                    </GridCommandColumn>    
+                </GridCommandColumns>
+            </GridColumn>
+             -->
         </GridColumns>
         <SfSpinner @bind-Visible = "@VisibleProp"></SfSpinner>
     </SfGrid>
@@ -110,7 +155,7 @@
     private enum GenderVal
     {
         Male,
-        Famale, 
+        Famale,
         Other
     }
 
@@ -120,11 +165,13 @@
     private List<EmployeeModel>? employeeData = null;
     private List<EmployeeJobTitle>? employeeTitleData;
     private List<ReportToModel>? reportToEmployeeData;
-    private List<object> toolbar = new List<object> { "Add", "Update", "Cancel", "Edit", "Delete" ,"Search", "ExcelExport" }; // Search bar in the grid 
+    private List<object> toolbar = new List<object> { "Add", "Search", "ExcelExport", "PdfExport",
+                                                      new ItemModel() { Text = "CSV export", TooltipText = "Export data to a CSV format",
+                                                                        PrefixIcon = "e-click", Id = "CSVExport"} }; // Search bar in the grid 
 
     protected override async Task OnInitializedAsync()
     {
-        VisibleProp = true; 
+        VisibleProp = true;
         employeeData = await EmployeeManagementService.GetEmployees();
         employeeTitleData = await EmployeeManagementService.GetEmployeeJobTitle();
         reportToEmployeeData = await EmployeeManagementService.GetEmployeeReportTo();
@@ -140,9 +187,10 @@
             if (arguments.Action == "Add")
             {
                 await EmployeeManagementService.AddEmployee(arguments.Data);
-            } else if (arguments.Action == "Edit")
+            }
+            else if (arguments.Action == "Edit")
             {
-                await EmployeeManagementService.UpdateEmployee(arguments.Data); 
+                await EmployeeManagementService.UpdateEmployee(arguments.Data);
             }
         }
         else if (arguments.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Delete))
@@ -168,8 +216,28 @@
 
     public async void ActionDownloadExcel(Syncfusion.Blazor.Navigations.ClickEventArgs arguments)
     {
-        if (arguments.Item.Id.Contains("_excelexport")){
+        if (arguments.Item.Id.Contains("_excelexport"))
+        {
             await SfEmployeeGrid?.ExportToExcelAsync();
         }
-}
+        else if (arguments.Item.Id.Contains("_pdfexport"))
+        {
+            await SfEmployeeGrid?.ExportToPdfAsync();
+        }
+        else if (arguments.Item.Id.Contains("CSVExport"))
+        {
+            await SfEmployeeGrid?.ExportToCsvAsync();    
+        }
+    }
+
+    public async void OnCommandClicked(CommandClickEventArgs<EmployeeModel> arguments)
+    {
+        if (arguments.CommandColumn.ButtonOption.Content == "O1")
+        {
+
+        }  else if (arguments.CommandColumn.ButtonOption.Content == "O2")
+        {
+            
+        }
+    }
 }
