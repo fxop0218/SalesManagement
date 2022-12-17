@@ -15,6 +15,23 @@ namespace SalesManagment.Services
             this.applicationDbContext = applicationDbContext;
         }
 
+        public async Task<Employee> AddEmployee(EmployeeModel employeeModel)
+        {
+            try
+            {
+                // Transform employee model to employee
+                Employee NewEmployee = employeeModel.Convert();
+                // Save the infromation of the employee
+                var res = await this.applicationDbContext.Employees.AddAsync(NewEmployee);
+                return res.Entity;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<List<EmployeeJobTitle>> GetEmployeeJobTitle()
         {
             try

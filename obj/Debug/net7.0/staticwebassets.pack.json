@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\Images\\Profile\\SarahHenderson.jpg"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\handson-ml2-master.zip",
+      "PackagePath": "staticwebassets\\Images\\Profile\\handson-ml2-master.zip"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },

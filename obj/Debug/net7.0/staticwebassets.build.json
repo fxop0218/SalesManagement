@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UsGAsONtr9XELhdUdelCfV2VyX/lJAItUkRs0hX9XCM=",
+  "Hash": "YUEyndxeA9n+LJLVCQ2d89Uu0DbLqFX7l6g2lF421Tw=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -1426,6 +1426,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Profile\\FamaleDefault.jpg"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\handson-ml2-master.zip",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Profile/handson-ml2-master.zip",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Profile\\handson-ml2-master.zip"
     },
     {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\HenryAndrews.jpg",
