@@ -139,6 +139,16 @@
             if (arguments.Action == "Add")
             {
                 await EmployeeManagementService.AddEmployee(arguments.Data);
+            } else if (arguments.Action == "Edit")
+            {
+                await EmployeeManagementService.UpdateEmployee(arguments.Data); 
+            }
+        }
+        else if (arguments.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Delete))
+        {
+            if (arguments.Action == "Delete")
+            {
+                await EmployeeManagementService.DeleteEmployee(arguments.Data.Id);
             }
         }
     }
@@ -147,8 +157,11 @@
     {
         if (arguments.RequestType.Equals(Syncfusion.Blazor.Grids.Action.Save))
         {
-            employeeData = await EmployeeManagementService.GetEmployees();
-            SfEmployeeGrid?.Refresh();
+            if (arguments.Action == "Add")
+            {
+                employeeData = await EmployeeManagementService.GetEmployees();
+                SfEmployeeGrid?.Refresh();
+            }
         }
     }
 }

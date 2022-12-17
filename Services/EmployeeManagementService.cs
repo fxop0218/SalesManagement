@@ -33,6 +33,24 @@ namespace SalesManagment.Services
             }
         }
 
+        public async Task DeleteEmployee(int id)
+        {
+            try
+            {
+                var employeeDel = await this.applicationDbContext.Employees.FindAsync(id);
+
+                // If the users exist, delete and save the changes
+                if (employeeDel != null) { 
+                    this.applicationDbContext.Employees.Remove(employeeDel);
+                    await this.applicationDbContext.SaveChangesAsync();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<List<EmployeeJobTitle>> GetEmployeeJobTitle()
         {
             try
@@ -82,6 +100,32 @@ namespace SalesManagment.Services
                 throw;
             }
             throw new NotImplementedException();
+        }
+
+        public async Task UpdateEmployee(EmployeeModel employee)
+        {
+            try
+            {
+                var employeeUpdate = await this.applicationDbContext.Employees.FindAsync(employee.Id);
+                if (employeeUpdate != null) // If the users exists, change all the values to the new values.
+                {
+                    employeeUpdate.FirstName = employee.FirstName;
+                    employeeUpdate.Surname = employee.Surname;
+                    employeeUpdate.ReportToEmpId= employee.ReportToEmpId;
+                    employeeUpdate.DateOfBirth = employee.DateOfBirth;
+                    employeeUpdate.ImagePath = employee.ImagePath;
+                    employeeUpdate.Gender = employee.Gender;
+                    employeeUpdate.Email = employee.Email;
+                    employeeUpdate.EmployeeTitleId= employee.EmployeeTitleId;
+
+                    await this.applicationDbContext.SaveChangesAsync(); // Save user changes
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

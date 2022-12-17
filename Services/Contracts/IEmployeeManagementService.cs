@@ -9,5 +9,7 @@ namespace SalesManagment.Services.Contracts
         Task<List<EmployeeJobTitle>> GetEmployeeJobTitle();
         Task<List<ReportToModel>> GetEmployeeReportTo();
         Task<Employee> AddEmployee(EmployeeModel employee);
+        Task UpdateEmployee(EmployeeModel employee);
+        Task DeleteEmployee(int id);
     }
 }
