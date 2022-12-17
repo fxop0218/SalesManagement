@@ -12,7 +12,7 @@
 <h3>EmployeeManagment</h3>
  <!--Grid with all the employee information -->
 <div style="max-width:1200px">
-    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData" Toolbar="@toolbar" AllowSorting="true"> <!--Toolbar with the acctions-->
+    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData" Toolbar="@toolbar" AllowSorting="true" AllowExcelExport="true"> <!--Toolbar with the acctions-->
         <GridColumns>
             <GridEditSettings AllowEditing="true" 
                                 AllowAdding="true" 
@@ -23,7 +23,8 @@
                                 AllowAdding="false"/> <!-- This field can't be edited-->
 
             <GridEvents OnActionBegin="ActionBeginHandler" 
-                        OnActionComplete="ActionCompletedHandler" 
+                        OnActionComplete="ActionCompletedHandler"
+                        OnToolbarClick="ActionDownloadExcel"
                         TValue="EmployeeModel"></GridEvents> <!-- Event listener -->
 
             <GridColumn HeaderText="Image Profile" Width="130px">
@@ -119,7 +120,7 @@
     private List<EmployeeModel>? employeeData = null;
     private List<EmployeeJobTitle>? employeeTitleData;
     private List<ReportToModel>? reportToEmployeeData;
-    private List<object> toolbar = new List<object> { "Add", "Update", "Cancel", "Edit", "Delete" ,"Search" }; // Search bar in the grid 
+    private List<object> toolbar = new List<object> { "Add", "Update", "Cancel", "Edit", "Delete" ,"Search", "ExcelExport" }; // Search bar in the grid 
 
     protected override async Task OnInitializedAsync()
     {
@@ -164,4 +165,11 @@
             }
         }
     }
+
+    public async void ActionDownloadExcel(Syncfusion.Blazor.Navigations.ClickEventArgs arguments)
+    {
+        if (arguments.Item.Id.Contains("_excelexport")){
+            await SfEmployeeGrid?.ExportToExcelAsync();
+        }
+}
 }
