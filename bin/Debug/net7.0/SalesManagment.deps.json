@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "7.0.1",
           "Syncfusion.Blazor.Core": "20.3.0.61",
           "Syncfusion.Blazor.Grid": "20.3.0.61",
+          "Syncfusion.Blazor.Lists": "20.3.0.61",
           "Syncfusion.Blazor.Themes": "20.3.0.61"
         },
         "runtime": {

@@ -51,7 +51,7 @@ namespace SalesManagment.Extensions
                               Description = product.Description,
                               Price = product.Price,
                               CategoryId = product.CategoryId,
-                              ImaPath = product.ImgPath
+                              ImgPath = product.ImgPath
 
                           }).ToListAsync();
         }
