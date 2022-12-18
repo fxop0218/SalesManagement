@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SalesManagment.Entities;
+using System.Reflection.Emit;
 
 namespace SalesManagment.Data
 {
@@ -205,6 +206,306 @@ namespace SalesManagment.Data
                 ReportToEmpId = 4,
                 ImagePath = "/Images/Profile/AngelaMoore.jpg",
                 EmployeeTitleId = 3
+
+            });
+        }
+    
+        public static void AddProductData(ModelBuilder modelBuilder)
+        {
+            //Add Categories - Road Bikes - Mountain Bikes - Camping - Hiking - Boots
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 1,
+                Name = "CPU"
+
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 2,
+                Name = "GPU"
+
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 3,
+                Name = "Mobiles"
+
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 4,
+                Name = "Computers"
+
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 5,
+                Name = "RAM"
+
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 6,
+                Name = "SSD"
+
+            });
+            modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
+            {
+                Id = 7,
+                Name = "motherboard"
+
+            });
+            //Products
+            //Category Mountain Bikes
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 1,
+                Name = "i5 13600K",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/13600k.jpg",
+                Price = 200,
+                CategoryId = 1
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 2,
+                Name = "I7-13700K ",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/13700k.jpg",
+                Price = 210,
+                CategoryId = 1
+
+            });
+            //Category Road Bikes
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 3,
+                Name = "RTX 2080 FE",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/rtx2080.jpg",
+                Price = 500,
+                CategoryId = 2
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 4,
+                Name = "RTX 3080 FE",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/rtx3080.jpg",
+                Price = 800,
+                CategoryId = 2
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 5,
+                Name = "RTX 4080 FE",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/rtx4080.jpg",
+                Price = 252,
+                CategoryId = 2
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 6,
+                Name = "RTX 4090 FE",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/rtx4090.jpg",
+                Price = 2000,
+                CategoryId = 2
+
+            });
+            //Camping
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 7,
+                Name = "POCO F1",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/pf1.jpg",
+                Price = 230,
+                CategoryId = 3
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 8,
+                Name = "Samsung s22",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/s22.jpg",
+                Price = 600,
+                CategoryId = 3
+
+            });
+            //Category Camping - Mattresses
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 9,
+                Name = "IPhone13",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/IPhone13.jpg",
+                Price = 1000,
+                CategoryId = 3
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 10,
+                Name = "IPhone14",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/IPhone14.jpg",
+                Price = 1600,
+                CategoryId = 3
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 11,
+                Name = "IPhone14 PRO",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/IPhone14Pro.jpg",
+                Price = 2000,
+                CategoryId = 3
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 12,
+                Name = "IPhone14 ProMax",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/IPhone14ProMax.jpg",
+                Price = 4000,
+                CategoryId = 3
+
+            });
+
+            //Hiking
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 13,
+                Name = "MacBook",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/MacBook.jpg",
+                Price = 2000,
+                CategoryId = 4
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 14,
+                Name = "Razer",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/Razer.jpg",
+                Price = 1500,
+                CategoryId = 4
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 15,
+                Name = "Surface",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/Surface.jpg",
+                Price = 1200,
+                CategoryId = 4
+
+            });
+            //Category Boots
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 16,
+                Name = "RAM 8gb",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/ram.jpg",
+                Price = 60,
+                CategoryId = 5
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 17,
+                Name = "RAM 16gb",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/ram.jpg",
+                Price = 100,
+                CategoryId = 5
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 18,
+                Name = "RAM 32gb",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/ram.jpg",
+                Price = 200,
+                CategoryId = 5
+
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 19,
+                Name = "RAM 64gb",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/ram.jpg",
+                Price = 300,
+                CategoryId = 5
+
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 20,
+                Name = "SSD 1Tb",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/ssd1t.jpg",
+                Price = 100,
+                CategoryId = 6
+
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 21,
+                Name = "SSD m.2 2Tb",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/m2tb.jpg",
+                Price = 200,
+                CategoryId = 6
+
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 22,
+                Name = "SSD m.2 5Tb",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/m2tb.jpg",
+                Price = 400,
+                CategoryId = 6
+
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 22,
+                Name = "MB 1",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/mb1.jpg",
+                Price = 200,
+                CategoryId = 6
+
+            });
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 22,
+                Name = "MB 2",
+                Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
+                ImgPath = "/Images/Products/mb1.jpg",
+                Price = 400,
+                CategoryId = 6
 
             });
         }
