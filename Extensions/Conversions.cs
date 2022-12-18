@@ -1,6 +1,7 @@
 ﻿using SalesManagment.Models;
 using SalesManagment.Entities;
 using Microsoft.EntityFrameworkCore;
+using SalesManagment.Data;
 
 namespace SalesManagment.Extensions
 {
@@ -36,6 +37,23 @@ namespace SalesManagment.Extensions
                 ImagePath = employeeModel.Gender.ToUpper() == "MALE" ? "/Images/Profile/MaleDefault.jpg"
                                                                     : "/Images/Profile/FamaleDefault.jpg"
             };
+        }
+
+        public static async Task<List<ProductModel>> Convert(this IQueryable<Product> Products, ApplicationDbContext applicationContext)
+        {
+            return await (from product in Products
+                          join prodCat in applicationContext.ProductCategories
+                          on product.CategoryId equals prodCat.Id
+                          select new ProductModel
+                          {
+                              Id = product.Id,
+                              Name = product.Name,
+                              Description = product.Description,
+                              Price = product.Price,
+                              CategoryId = product.CategoryId,
+                              ImaPath = product.ImgPath
+
+                          }).ToListAsync();
         }
     }
 }
