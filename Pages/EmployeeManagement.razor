@@ -9,16 +9,34 @@
 @using Syncfusion.Blazor.Navigations.Internal;
 @using Syncfusion.Blazor.Navigations;
 @using Syncfusion.Blazor.Spinner;
+@using Syncfusion.Blazor.Buttons;
 
 @inject IEmployeeManagementService EmployeeManagementService;
 <h3>EmployeeManagment</h3>
  <!--Grid with all the employee information -->
 <div style="max-width:1200px">
-    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData" Toolbar="@toolbar" AllowSorting="true" AllowExcelExport="true" AllowPdfExport="true"> <!--Toolbar with the acctions-->
+    <!--Toolbar with the acctions-->
+    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData" Toolbar="@toolbar" AllowSorting="true" AllowExcelExport="true" AllowPdfExport="true"> 
         <GridColumns>
             <GridEditSettings AllowEditing="true" 
                                 AllowAdding="true" 
-                                AllowDeleting="true"></GridEditSettings> <!--Allow to edit, delete, and create new fields-->
+                                AllowDeleting="true"
+                                AllowEditOnDblClick="true"
+                                Mode="EditMode.Batch"> <!-- Mode = "EditMode.Dialog" to set edit into a dialog  -->
+
+                <!-- Create a template of the alert dialog header -->
+                <HeaderTemplate>
+                    <span>@(GetHeaderText(context as EmployeeModel))</span>
+                </HeaderTemplate>
+                 
+                <!-- Create the buttons of the dialog footer -->
+                <FooterTemplate>
+                    <!-- Save the changes -->
+                    <SfButton OnClick="@Save" IsPrimary="true">@DialogButtonCaption</SfButton> 
+                    <!-- Cancel the edit and colose the dialog -->
+                    <SfButton OnClick="@Cancel" IsPrimary="true">Cancel</SfButton> 
+                </FooterTemplate>
+            </GridEditSettings> <!--Allow to edit, delete, and create new fields-->
 
             <GridColumn Field="@nameof(EmployeeModel.Id)" 
                                 HeaderText="Id" IsPrimaryKey="true" Width="40px"
@@ -28,9 +46,10 @@
                         OnActionComplete="ActionCompletedHandler"
                         OnToolbarClick="ActionDownloadExcel"
                         CommandClicked="OnCommandClicked"
+                        OnBatchSave = "OnBatchUpdate"
                         TValue="EmployeeModel"></GridEvents> <!-- Event listener -->
 
-            <GridColumn HeaderText="Image Profile" Width="130px">
+            <GridColumn HeaderText="Image Profile" AllowAdding="false" AllowEditing="false" Width="130px">
                 <Template>
                     @{
                         var employee = (context as EmployeeModel);
@@ -161,13 +180,29 @@
 
     // Transform GenderVal into array
     private SfGrid<EmployeeModel>? SfEmployeeGrid { get; set; }
+    private string DialogButtonCaption { get; set; }
     private string[] genderCollection = Enum.GetNames(typeof(GenderVal));
     private List<EmployeeModel>? employeeData = null;
     private List<EmployeeJobTitle>? employeeTitleData;
     private List<ReportToModel>? reportToEmployeeData;
-    private List<object> toolbar = new List<object> { "Add", "Search", "ExcelExport", "PdfExport",
+    private List<object> toolbar = new List<object> { "Add", "Search", "Update", "Cancel", "ExcelExport", "PdfExport",
                                                       new ItemModel() { Text = "CSV export", TooltipText = "Export data to a CSV format",
                                                                         PrefixIcon = "e-click", Id = "CSVExport"} }; // Search bar in the grid 
+
+
+    private string GetHeaderText(EmployeeModel employeeMod)
+    {
+        if (employeeMod.Id == 0)
+        {
+            DialogButtonCaption = "Add";
+            return "Add Employee";
+        } else
+        {
+            DialogButtonCaption = "Update";
+            return $"Edit: {employeeMod.FirstName} {employeeMod.Surname} with id {employeeMod.Id}";
+        }
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -237,7 +272,37 @@
 
         }  else if (arguments.CommandColumn.ButtonOption.Content == "O2")
         {
-            
+
+        }
+    }
+
+    private async Task Cancel()
+    {
+        await SfEmployeeGrid.CloseEditAsync();
+    }
+
+    private async Task Save()
+    {
+        await SfEmployeeGrid.EndEditAsync();
+    }
+    // Only works if don't show the dialog.
+    private async Task OnBatchUpdate(BeforeBatchSaveArgs<EmployeeModel> arguments)
+    {
+        var addedRecords = arguments.BatchChanges.AddedRecords;
+        var updateRecords = arguments.BatchChanges.ChangedRecords;
+        var deleteRecords = arguments.BatchChanges.DeletedRecords;
+
+        foreach(EmployeeModel emp in addedRecords)
+        {
+            await EmployeeManagementService.AddEmployee(emp);
+        } 
+        foreach (EmployeeModel emp in deleteRecords)
+        {
+            await EmployeeManagementService.DeleteEmployee(emp.Id);
+        }
+        foreach (EmployeeModel emp in updateRecords)
+        {
+            await EmployeeManagementService.UpdateEmployee(emp);
         }
     }
 }
