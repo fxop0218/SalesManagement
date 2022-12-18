@@ -39,10 +39,10 @@ namespace SalesManagment.Extensions
             };
         }
 
-        public static async Task<List<ProductModel>> Convert(this IQueryable<Product> Products, ApplicationDbContext applicationContext)
+        public static async Task<List<ProductModel>> Convert(this IQueryable<Product> Products, ApplicationDbContext context)
         {
             return await (from product in Products
-                          join prodCat in applicationContext.ProductCategories
+                          join prodCat in context.ProductCategories
                           on product.CategoryId equals prodCat.Id
                           select new ProductModel
                           {
@@ -51,6 +51,7 @@ namespace SalesManagment.Extensions
                               Description = product.Description,
                               Price = product.Price,
                               CategoryId = product.CategoryId,
+                              CategoryName = prodCat.Name,
                               ImgPath = product.ImgPath
 
                           }).ToListAsync();

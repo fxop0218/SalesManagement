@@ -8,9 +8,14 @@
 <div class="row mt-3">
     <div class="col-12">
         <SfListView DataSource="productData">
-            <ListViewFieldSettings TValue="ProductModel" Id="Id" Text="Name">
-
+            <ListViewFieldSettings TValue="ProductModel" Id="Id"
+                                    Text="Name" GroupBy="CategoryName">
             </ListViewFieldSettings>
+                <ListViewTemplates TValue="ProductModel">
+                    <GroupTemplate>
+                        <h5>@context.Text</h5>
+                    </GroupTemplate>
+                </ListViewTemplates>
         </SfListView>
     </div>
 </div>
