@@ -16,7 +16,14 @@
  <!--Grid with all the employee information -->
 <div style="max-width:1200px">
     <!--Toolbar with the acctions-->
-    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData" Toolbar="@toolbar" AllowSorting="true" AllowExcelExport="true" AllowPdfExport="true"> 
+    <SfGrid @ref="SfEmployeeGrid" DataSource="employeeData"
+                                    Toolbar="@toolbar"
+                                    AllowSorting="true"
+                                    AllowExcelExport="true"
+                                    AllowPdfExport="true"
+                                    AllowGrouping="true"
+                                    AllowFiltering="true"
+                                    AllowPaging="true"> 
         <GridColumns>
             <GridEditSettings AllowEditing="true" 
                                 AllowAdding="true" 
@@ -37,6 +44,8 @@
                     <SfButton OnClick="@Cancel" IsPrimary="true">Cancel</SfButton> 
                 </FooterTemplate>
             </GridEditSettings> <!--Allow to edit, delete, and create new fields-->
+            <GridPageSettings PageSize=10></GridPageSettings>
+            <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
 
             <GridColumn Field="@nameof(EmployeeModel.Id)" 
                                 HeaderText="Id" IsPrimaryKey="true" Width="40px"
