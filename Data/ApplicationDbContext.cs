@@ -14,6 +14,7 @@ namespace SalesManagment.Data
         {
             base.OnModelCreating(modelBuilder);
             SeedData.AddEmployeeData(modelBuilder);
+            SeedData.AddProductData(modelBuilder);
         }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeJobTitle> EmployeeJobTitles { get; set; }

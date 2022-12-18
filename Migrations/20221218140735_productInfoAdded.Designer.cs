@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesManagment.Data;
 
@@ -11,9 +12,11 @@ using SalesManagment.Data;
 namespace SalesManagment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221218140735_productInfoAdded")]
+    partial class productInfoAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -290,224 +293,6 @@ namespace SalesManagment.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/13600k.jpg",
-                            Name = "i5 13600K",
-                            Price = 200m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 1,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/13700k.jpg",
-                            Name = "I7-13700K ",
-                            Price = 210m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/rtx2080.jpg",
-                            Name = "RTX 2080 FE",
-                            Price = 500m
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/rtx3080.jpg",
-                            Name = "RTX 3080 FE",
-                            Price = 800m
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/rtx4080.jpg",
-                            Name = "RTX 4080 FE",
-                            Price = 252m
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CategoryId = 2,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/rtx4090.jpg",
-                            Name = "RTX 4090 FE",
-                            Price = 2000m
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/pf1.jpg",
-                            Name = "POCO F1",
-                            Price = 230m
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/s22.jpg",
-                            Name = "Samsung s22",
-                            Price = 600m
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/IPhone13.jpg",
-                            Name = "IPhone13",
-                            Price = 1000m
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/IPhone14.jpg",
-                            Name = "IPhone14",
-                            Price = 1600m
-                        },
-                        new
-                        {
-                            Id = 11,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/IPhone14Pro.jpg",
-                            Name = "IPhone14 PRO",
-                            Price = 2000m
-                        },
-                        new
-                        {
-                            Id = 12,
-                            CategoryId = 3,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/IPhone14ProMax.jpg",
-                            Name = "IPhone14 ProMax",
-                            Price = 4000m
-                        },
-                        new
-                        {
-                            Id = 13,
-                            CategoryId = 4,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/MacBook.jpg",
-                            Name = "MacBook",
-                            Price = 2000m
-                        },
-                        new
-                        {
-                            Id = 14,
-                            CategoryId = 4,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/Razer.jpg",
-                            Name = "Razer",
-                            Price = 1500m
-                        },
-                        new
-                        {
-                            Id = 15,
-                            CategoryId = 4,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/Surface.jpg",
-                            Name = "Surface",
-                            Price = 1200m
-                        },
-                        new
-                        {
-                            Id = 16,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/ram.jpg",
-                            Name = "RAM 8gb",
-                            Price = 60m
-                        },
-                        new
-                        {
-                            Id = 17,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/ram.jpg",
-                            Name = "RAM 16gb",
-                            Price = 100m
-                        },
-                        new
-                        {
-                            Id = 18,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/ram.jpg",
-                            Name = "RAM 32gb",
-                            Price = 200m
-                        },
-                        new
-                        {
-                            Id = 19,
-                            CategoryId = 5,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/ram.jpg",
-                            Name = "RAM 64gb",
-                            Price = 300m
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CategoryId = 6,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/ssd1t.jpg",
-                            Name = "SSD 1Tb",
-                            Price = 100m
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CategoryId = 6,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/m2tb.jpg",
-                            Name = "SSD m.2 2Tb",
-                            Price = 200m
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CategoryId = 6,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/m2tb.jpg",
-                            Name = "SSD m.2 5Tb",
-                            Price = 400m
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CategoryId = 7,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/mb1.jpg",
-                            Name = "MB 1",
-                            Price = 200m
-                        },
-                        new
-                        {
-                            Id = 24,
-                            CategoryId = 7,
-                            Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
-                            ImgPath = "/Images/Products/mb1.jpg",
-                            Name = "MB 2",
-                            Price = 400m
-                        });
                 });
 
             modelBuilder.Entity("SalesManagment.Entities.ProductCategory", b =>
@@ -525,43 +310,6 @@ namespace SalesManagment.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "CPU"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "GPU"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Mobiles"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Computers"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "RAM"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "SSD"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "motherboard"
-                        });
                 });
 #pragma warning restore 612, 618
         }

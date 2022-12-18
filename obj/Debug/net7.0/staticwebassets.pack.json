@@ -5,6 +5,82 @@
       "PackagePath": "staticwebassets\\SalesManagment.bundle.scp.css"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\13600k.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\13600k.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\13700k.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\13700k.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\IPhone13.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\IPhone13.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\IPhone14.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\IPhone14.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\IPhone14Pro.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\IPhone14Pro.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\IPhone14ProMax.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\IPhone14ProMax.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MacBook.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\MacBook.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Razer.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\Razer.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Surface.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\Surface.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\m2tb.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\m2tb.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\mb1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\mb1.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\pf1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\pf1.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\ram.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\ram.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx2080.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\rtx2080.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx3080.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\rtx3080.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4080",
+      "PackagePath": "staticwebassets\\Images\\Products"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4090.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\rtx4090.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\s22.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\s22.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\ssd1t.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\ssd1t.jpg"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Profile\\AngelaMoore.jpg",
       "PackagePath": "staticwebassets\\Images\\Profile\\AngelaMoore.jpg"
     },

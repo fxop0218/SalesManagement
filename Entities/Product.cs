@@ -1,4 +1,7 @@
-﻿namespace SalesManagment.Entities
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using System.ComponentModel.DataAnnotations;
+
+namespace SalesManagment.Entities
 {
     public class Product
     {

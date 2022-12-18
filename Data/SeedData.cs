@@ -489,23 +489,23 @@ namespace SalesManagment.Data
 
             modelBuilder.Entity<Product>().HasData(new Product
             {
-                Id = 22,
+                Id = 23,
                 Name = "MB 1",
                 Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
                 ImgPath = "/Images/Products/mb1.jpg",
                 Price = 200,
-                CategoryId = 6
+                CategoryId = 7
 
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
             {
-                Id = 22,
+                Id = 24,
                 Name = "MB 2",
                 Description = "Lorem ipsum dolor sit amet. Qui esse quos est impedit ipsa et modi saepe in culpa quia. ",
                 ImgPath = "/Images/Products/mb1.jpg",
                 Price = 400,
-                CategoryId = 6
+                CategoryId = 7
 
             });
         }
