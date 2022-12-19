@@ -8,7 +8,7 @@
 
 <div class="row mt-3">
     <div class="col-12">
-        <SfListView DataSource="productData" CssClass="e-list-template listview-template">
+        <SfListView DataSource="productData" CssClass="e-list-template listview-template" ShowCheckBox="true">
             <ListViewFieldSettings TValue="ProductModel" Id="Id"
                                     Text="Name" GroupBy="CategoryName">
             </ListViewFieldSettings>
@@ -43,6 +43,13 @@
 </div>
 
 <style>
+    .listview-template {
+        max-width: 1200px;
+        border-radius: 2px;
+        height: 650px;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.16), 0 3px 5px rgba(0,0,0,0.23);
+        padding: 18px;
+    }
     .img-class {
         height:95px;
         width:155px;
