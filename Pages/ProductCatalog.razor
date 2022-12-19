@@ -1,5 +1,6 @@
 ﻿@page "/ProductCatalog"
 @using Syncfusion.Blazor.Lists
+@using System.Globalization;
 @inject IProductService ProductService
 
 
@@ -7,11 +8,32 @@
 
 <div class="row mt-3">
     <div class="col-12">
-        <SfListView DataSource="productData">
+        <SfListView DataSource="productData" CssClass="e-list-template listview-template">
             <ListViewFieldSettings TValue="ProductModel" Id="Id"
                                     Text="Name" GroupBy="CategoryName">
             </ListViewFieldSettings>
                 <ListViewTemplates TValue="ProductModel">
+                    <Template>
+                        <div class="e-list-wrapper e-list-multi-line">
+                            <span class="e-list-content">
+                                <img src="@context.ImgPath" class="img-class" />
+                            </span>
+                            <span class="e-list-content">
+                                <h5>
+                                @context.Name
+                                </h5>
+                            </span>
+                            <span class="e-list-content">
+                                <b>
+                                @context.Price.ToString("C", CultureInfo.CreateSpecificCulture("da-US"))
+                                </b>
+                            </span>
+                            <span class="e-list-content">
+                                @context.Description
+                            </span>
+                        </div>
+
+                    </Template>
                     <GroupTemplate>
                         <h5>@context.Text</h5>
                     </GroupTemplate>
@@ -19,6 +41,13 @@
         </SfListView>
     </div>
 </div>
+
+<style>
+    .img-class {
+        height:95px;
+        width:155px;
+    }
+</style>
 
 @code {
 
