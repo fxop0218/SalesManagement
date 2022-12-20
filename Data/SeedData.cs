@@ -212,7 +212,6 @@ namespace SalesManagment.Data
     
         public static void AddProductData(ModelBuilder modelBuilder)
         {
-            //Add Categories - Road Bikes - Mountain Bikes - Camping - Hiking - Boots
             modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
             {
                 Id = 1,
@@ -255,8 +254,7 @@ namespace SalesManagment.Data
                 Name = "motherboard"
 
             });
-            //Products
-            //Category Mountain Bikes
+
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 1,
@@ -277,7 +275,6 @@ namespace SalesManagment.Data
                 CategoryId = 1
 
             });
-            //Category Road Bikes
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 3,
@@ -318,7 +315,6 @@ namespace SalesManagment.Data
                 CategoryId = 2
 
             });
-            //Camping
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 7,
@@ -339,7 +335,6 @@ namespace SalesManagment.Data
                 CategoryId = 3
 
             });
-            //Category Camping - Mattresses
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 9,
@@ -381,7 +376,6 @@ namespace SalesManagment.Data
 
             });
 
-            //Hiking
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 13,
@@ -412,7 +406,6 @@ namespace SalesManagment.Data
                 CategoryId = 4
 
             });
-            //Category Boots
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 16,
@@ -507,6 +500,76 @@ namespace SalesManagment.Data
                 Price = 400,
                 CategoryId = 7
 
+            });
+        }
+        public static void AddClientData(ModelBuilder modelBuilder)
+        {
+            //Add Retail Outlet Data
+            modelBuilder.Entity<RetailOutlet>().HasData(new RetailOutlet
+            {
+                Id = 1,
+                Name = "Texas Outdoor Store",
+                Location = "TX"
+            });
+            modelBuilder.Entity<RetailOutlet>().HasData(new RetailOutlet
+            {
+                Id = 2,
+                Name = "California Outdoor Store",
+                Location = "CA"
+            });
+            modelBuilder.Entity<RetailOutlet>().HasData(new RetailOutlet
+            {
+                Id = 3,
+                Name = "New York Outdoor Store",
+                Location = "NY"
+            });
+            modelBuilder.Entity<RetailOutlet>().HasData(new RetailOutlet
+            {
+                Id = 4,
+                Name = " Washington Outdoor Store",
+                Location = "WA"
+            });
+
+            //Add Client data
+            modelBuilder.Entity<Client>().HasData(new Client
+            {
+                Id = 1,
+                FirstName = "James",
+                Surname = "Tailor",
+                JobTitle = "Buyer",
+                Phone = "000000000",
+                Email = "james.tailor@company.com",
+                RetailOutletId = 1
+            });
+            modelBuilder.Entity<Client>().HasData(new Client
+            {
+                Id = 2,
+                FirstName = "Jill",
+                Surname = "Hutton",
+                JobTitle = "Buyer",
+                Phone = "000000000",
+                Email = "jill.hutton@company.com",
+                RetailOutletId = 2
+            });
+            modelBuilder.Entity<Client>().HasData(new Client
+            {
+                Id = 3,
+                FirstName = "Craig",
+                Surname = "Rice",
+                JobTitle = "Buyer",
+                Phone = "000000000",
+                Email = "craig.rice@company.com",
+                RetailOutletId = 3
+            });
+            modelBuilder.Entity<Client>().HasData(new Client
+            {
+                Id = 4,
+                FirstName = "Amy",
+                Surname = "Smith",
+                JobTitle = "Buyer",
+                Phone = "000000000",
+                Email = "amy.smith@company.com",
+                RetailOutletId = 4
             });
         }
     }

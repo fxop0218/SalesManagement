@@ -1,12 +1,20 @@
 ﻿@page "/ProductCatalog"
+@using SalesManagment.Services;
+@using Syncfusion.Blazor.DropDowns
 @using Syncfusion.Blazor.Lists
 @using System.Globalization;
 @inject IProductService ProductService
+@inject IClientService ClientService
 
 
 <h3>Catalog</h3>
 
 <div class="row mt-3">
+    <div class="col-12">
+        <SfComboBox DataSource="ClientData" TValue="int" TItem="ClientModel" @bind-Value="ClientId">
+            <ComboBoxFieldSettings Text="RetailOutletName" Value="Id"></ComboBoxFieldSettings>
+        </SfComboBox>
+    </div>
     <div class="col-12">
         <SfListView DataSource="productData" CssClass="e-list-template listview-template" ShowCheckBox="true">
             <ListViewFieldSettings TValue="ProductModel" Id="Id"
@@ -58,11 +66,14 @@
 
 @code {
 
+    private int ClientId { get; set; }
     private List<ProductModel> productData { get; set; }
+    private List<ClientModel> ClientData { get; set; }
 
 
     protected override async Task OnInitializedAsync()
     {
         productData = await ProductService.GetProducts();
+        ClientData = await ClientService.GetClient();
     }
 }

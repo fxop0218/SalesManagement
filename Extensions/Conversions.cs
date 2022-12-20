@@ -2,6 +2,7 @@
 using SalesManagment.Entities;
 using Microsoft.EntityFrameworkCore;
 using SalesManagment.Data;
+using System.Runtime.CompilerServices;
 
 namespace SalesManagment.Extensions
 {
@@ -53,6 +54,26 @@ namespace SalesManagment.Extensions
                               CategoryId = product.CategoryId,
                               CategoryName = prodCat.Name,
                               ImgPath = product.ImgPath
+
+                          }).ToListAsync();
+        }
+
+        public static async Task<List<ClientModel>> Convert(this IQueryable<Client> clients, ApplicationDbContext context)
+        {
+            return await (from c in clients
+                          join r in context.RetailOutlets
+                          on c.RetailOutletId equals r.Id
+                          select new ClientModel
+                          {
+                              Id = c.Id,
+                              FirstName = c.FirstName,
+                              Surname = c.Surname,
+                              JobTitle = c.JobTitle,
+                              Phone = c.Phone,
+                              Email = c.Email,
+                              RetailOutletId = c.RetailOutletId,
+                              RetailOutletName = r.Name,
+                              RetailOutletLocation = r.Location
 
                           }).ToListAsync();
         }

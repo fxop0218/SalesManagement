@@ -22,6 +22,84 @@ namespace SalesManagment.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("SalesManagment.Entities.Client", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RetailOutletId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "james.tailor@company.com",
+                            FirstName = "James",
+                            JobTitle = "Buyer",
+                            Phone = "000000000",
+                            RetailOutletId = 1,
+                            Surname = "Tailor"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "jill.hutton@company.com",
+                            FirstName = "Jill",
+                            JobTitle = "Buyer",
+                            Phone = "000000000",
+                            RetailOutletId = 2,
+                            Surname = "Hutton"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "craig.rice@company.com",
+                            FirstName = "Craig",
+                            JobTitle = "Buyer",
+                            Phone = "000000000",
+                            RetailOutletId = 3,
+                            Surname = "Rice"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Email = "amy.smith@company.com",
+                            FirstName = "Amy",
+                            JobTitle = "Buyer",
+                            Phone = "000000000",
+                            RetailOutletId = 4,
+                            Surname = "Smith"
+                        });
+                });
+
             modelBuilder.Entity("SalesManagment.Entities.Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -561,6 +639,53 @@ namespace SalesManagment.Migrations
                         {
                             Id = 7,
                             Name = "motherboard"
+                        });
+                });
+
+            modelBuilder.Entity("SalesManagment.Entities.RetailOutlet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RetailOutlets");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Location = "TX",
+                            Name = "Texas Outdoor Store"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Location = "CA",
+                            Name = "California Outdoor Store"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Location = "NY",
+                            Name = "New York Outdoor Store"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Location = "WA",
+                            Name = " Washington Outdoor Store"
                         });
                 });
 #pragma warning restore 612, 618
