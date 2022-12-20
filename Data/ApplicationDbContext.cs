@@ -23,7 +23,6 @@ namespace SalesManagment.Data
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<RetailOutlet> RetailOutlets { get; set; }
-
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrederItems { get; set; }
     }

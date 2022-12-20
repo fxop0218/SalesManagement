@@ -5,6 +5,7 @@
 @using System.Globalization;
 @inject IProductService ProductService
 @inject IClientService ClientService
+@inject IOrderService OrderService
 
 
 <h3>Catalog</h3>
@@ -16,7 +17,7 @@
         </SfComboBox>
     </div>
     <div class="col-12">
-        <SfListView DataSource="productData" CssClass="e-list-template listview-template" ShowCheckBox="true">
+        <SfListView @ref = "SfProductLV" DataSource="productData" CssClass="e-list-template listview-template" ShowCheckBox="true">
             <ListViewFieldSettings TValue="ProductModel" Id="Id"
                                     Text="Name" GroupBy="CategoryName">
             </ListViewFieldSettings>
@@ -48,6 +49,14 @@
                 </ListViewTemplates>
         </SfListView>
     </div>
+    <div class="row mt-4">
+        <div class="col-3">
+            <button class="btn btn-outline-dark" @onclick="()=>(CreateOrder())">
+                Create Order
+            </button>
+
+        </div>
+    </div>
 </div>
 
 <style>
@@ -69,6 +78,7 @@
 
 @code {
 
+    private SfListView<ProductModel> SfProductLV { get; set; }
     private int ClientId { get; set; }
     private List<ProductModel> productData { get; set; }
     private List<ClientModel> ClientData { get; set; }
@@ -78,5 +88,25 @@
     {
         productData = await ProductService.GetProducts();
         ClientData = await ClientService.GetClient();
+    }
+
+    protected async Task CreateOrder()
+    {
+        try
+        {
+            SelectedItems<ProductModel> productOrdered = await SfProductLV.GetCheckedItemsAsync();
+            List<OrderItem> orderItem = (from p in productOrdered.Data
+                                         select new OrderItem
+                                         {
+                                             ProductId = p.Id,
+                                             Price = p.Price,
+                                             Quantity = 1,
+                                         }).ToList();
+        }
+        catch (Exception)
+        {
+            
+            throw;
+        }
     }
 }
