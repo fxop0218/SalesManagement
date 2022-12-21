@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LSY6Yy0KE/EzRBadMEWz5SkcyhsSibPadnhMVCheVYM=",
+  "Hash": "1l4kJPYBOPirY63TfH6BsV5H7eqgh94DlyNU6XVN4/8=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -712,6 +712,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.navigations\\20.3.0.61\\staticwebassets\\scripts\\sf-treeview.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.notifications\\20.3.0.58\\staticwebassets\\scripts\\sf-toast.min.js",
+      "SourceId": "Syncfusion.Blazor.Notifications",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.notifications\\20.3.0.58\\staticwebassets\\",
+      "BasePath": "_content/Syncfusion.Blazor.Notifications",
+      "RelativePath": "scripts/sf-toast.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.notifications\\20.3.0.58\\staticwebassets\\scripts\\sf-toast.min.js"
     },
     {
       "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.popups\\20.3.0.61\\staticwebassets\\scripts\\sf-dialog.min.js",

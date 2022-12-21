@@ -19,7 +19,7 @@ namespace SalesManagment.Services
             {
                 Order order = new Order
                 {
-                    OrderDataTime = orderModel.OrderDataTime,
+                    OrderDataTime = DateTime.Now,
                     ClinetId = orderModel.ClientId,
                     EmployeeId = 9,
                     Price = orderModel.OrderItems.Sum(o=>o.Price),
@@ -27,10 +27,13 @@ namespace SalesManagment.Services
                 };
 
                 var addedOrder = await this.applicationDbContext.Orders.AddAsync(order);
+                await this.applicationDbContext.SaveChangesAsync();
                 int orderId = addedOrder.Entity.Id;
 
                 var orderItemsToAdd = ReturnOrderItemsWithOrderId(orderId, orderModel.OrderItems);
                 this.applicationDbContext.AddRange(orderItemsToAdd);
+                await this.applicationDbContext.SaveChangesAsync();
+
 
             }
             catch (Exception)

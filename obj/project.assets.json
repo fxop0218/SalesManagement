@@ -1012,6 +1012,29 @@
           "buildMultiTargeting/Syncfusion.Blazor.Navigations.props": {}
         }
       },
+      "Syncfusion.Blazor.Notifications/20.3.0.58": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Buttons": "20.3.0.58",
+          "Syncfusion.Blazor.Core": "20.3.0.58"
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Blazor.Notifications.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Blazor.Notifications.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Notifications.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Notifications.props": {}
+        }
+      },
       "Syncfusion.Blazor.Popups/20.3.0.61": {
         "type": "package",
         "dependencies": {
@@ -3084,6 +3107,29 @@
         "syncfusion_logo.png"
       ]
     },
+    "Syncfusion.Blazor.Notifications/20.3.0.58": {
+      "sha512": "ZrI2syI5ugTkbwLdUk4eCI1qC2qhVfVguPzMaWxI9cck7BJQ82h3AyvD+G1cB/23zE1GIPIhEB51BQItUiKrMw==",
+      "type": "package",
+      "path": "syncfusion.blazor.notifications/20.3.0.58",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Notifications.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Notifications.props",
+        "buildTransitive/Syncfusion.Blazor.Notifications.props",
+        "lib/net6.0/Syncfusion.Blazor.Notifications.dll",
+        "lib/net6.0/Syncfusion.Blazor.Notifications.xml",
+        "lib/netstandard2.1/Syncfusion.Blazor.Notifications.dll",
+        "lib/netstandard2.1/Syncfusion.Blazor.Notifications.xml",
+        "staticwebassets/scripts/sf-toast.min.js",
+        "syncfusion.blazor.notifications.20.3.0.58.nupkg.sha512",
+        "syncfusion.blazor.notifications.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
     "Syncfusion.Blazor.Popups/20.3.0.61": {
       "sha512": "0mQN/V7Fs86ZBNDemoUZi1SCm5gJ6W8AByBQD0jGyX40WMi3BAwB8zPO6+GBkZl1oUqfSw3hpvCgSmD1L94QyQ==",
       "type": "package",
@@ -4638,6 +4684,7 @@
       "Syncfusion.Blazor.Core >= 20.3.0.61",
       "Syncfusion.Blazor.Grid >= 20.3.0.61",
       "Syncfusion.Blazor.Lists >= 20.3.0.61",
+      "Syncfusion.Blazor.Notifications >= 20.3.0.58",
       "Syncfusion.Blazor.Themes >= 20.3.0.61"
     ]
   },
@@ -4707,6 +4754,10 @@
           "Syncfusion.Blazor.Lists": {
             "target": "Package",
             "version": "[20.3.0.61, )"
+          },
+          "Syncfusion.Blazor.Notifications": {
+            "target": "Package",
+            "version": "[20.3.0.58, )"
           },
           "Syncfusion.Blazor.Themes": {
             "target": "Package",
