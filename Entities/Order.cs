@@ -7,6 +7,7 @@
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public int EmployeeId { get; set; }
-        public int ClinetId { get; set; }
+        public int ClietnId { get; set; }
+        public int ClinetId { get; internal set; }
     }
 }
