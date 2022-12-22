@@ -16,32 +16,41 @@ namespace SalesManagment.Services
         }
         public async Task CreateOrder(OrderModel orderModel)
         {
-            try
+            using (var dbContextTransaction = await this.applicationDbContext.Database.BeginTransactionAsync())
             {
-                Order order = new Order
+                try
                 {
-                    OrderDataTime = DateTime.Now,
-                    ClietnId = orderModel.ClientId,
-                    EmployeeId = 9,
-                    Price = orderModel.OrderItems.Sum(o=>o.Price),
-                    Quantity = orderModel.OrderItems.Sum(o=>o.Quantity), 
-                };
+                    //var employee = await GetLoggedOnEmployee();
 
-                var addedOrder = await this.applicationDbContext.Orders.AddAsync(order);
-                await this.applicationDbContext.SaveChangesAsync();
-                int orderId = addedOrder.Entity.Id;
+                    Order order = new Order
+                    {
+                        OrderDateTime = DateTime.Now,
+                        ClientId = orderModel.ClientId,
+                        EmployeeId = 9,
+                        Price = orderModel.OrderItems.Sum(o => o.Price),
+                        Quantity = orderModel.OrderItems.Sum(o => o.Quantity)
+                    };
 
-                var orderItemsToAdd = ReturnOrderItemsWithOrderId(orderId, orderModel.OrderItems);
-                this.applicationDbContext.AddRange(orderItemsToAdd);
+                    var addedOrder = await this.applicationDbContext.Orders.AddAsync(order);
+                    await this.applicationDbContext.SaveChangesAsync();
+                    int orderId = addedOrder.Entity.Id;
 
-                await this.applicationDbContext.SaveChangesAsync();
+                    var orderItemsToAdd = ReturnOrderItemsWithOrderId(orderId, orderModel.OrderItems);
+                    this.applicationDbContext.AddRange(orderItemsToAdd);
 
-                await UpdateSalesOrderReport(orderId, order);
-            }
-            catch (Exception)
-            {
+                    await this.applicationDbContext.SaveChangesAsync();
 
-                throw;
+                    await UpdateSalesOrderReport(orderId, order);
+
+                    await dbContextTransaction.CommitAsync();
+
+                }
+
+                catch (Exception)
+                {
+                    await dbContextTransaction.DisposeAsync();
+                    throw;
+                }
             }
         }
 
@@ -67,7 +76,7 @@ namespace SalesManagment.Services
                                                         select new SalesOrderReport
                                                         {
                                                             OrderId = orderId,
-                                                            OrderDateTime = order.OrderDataTime,
+                                                            OrderDateTime = order.OrderDateTime,
                                                             OrderPrice = order.Price,
                                                             OrderQty = order.Quantity,
                                                             OrderItemId = oi.Id,
@@ -80,13 +89,12 @@ namespace SalesManagment.Services
                                                             ProductName = applicationDbContext.Products.FirstOrDefault(p => p.Id == oi.ProductId).Name,
                                                             ProductCategoryId = applicationDbContext.Products.FirstOrDefault(p => p.Id == oi.ProductId).CategoryId,
                                                             ProductCategoryName = applicationDbContext.ProductCategories.FirstOrDefault(c => c.Id == applicationDbContext.Products.FirstOrDefault(p => p.Id == oi.ProductId).CategoryId).Name,
-                                                            ClientId = order.ClietnId,
-                                                            ClientFirstName = applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClietnId).FirstName,
-                                                            ClientSurname = applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClietnId).Surname,
-                                                            RetailOutletId = applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClietnId).RetailOutletId,
-                                                            RetailOutletLocation = applicationDbContext.RetailOutlets.FirstOrDefault(r => r.Id == applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClietnId).RetailOutletId).Location
+                                                            ClientId = order.ClientId,
+                                                            ClientFirstName = applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClientId).FirstName, // error aqui.
+                                                            ClientSurname = applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClientId).Surname,
+                                                            RetailOutletLocation = applicationDbContext.RetailOutlets.FirstOrDefault(r => r.Id == applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClientId).RetailOutletId).Location
                                                         }).ToListAsync();
-
+                Console.WriteLine(srItems.Count);
                 this.applicationDbContext.AddRange(srItems);
                 await this.applicationDbContext.SaveChangesAsync();
             }

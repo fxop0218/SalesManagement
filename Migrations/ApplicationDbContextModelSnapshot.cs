@@ -348,13 +348,13 @@ namespace SalesManagment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ClinetId")
+                    b.Property<int>("ClientId")
                         .HasColumnType("int");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("OrderDataTime")
+                    b.Property<DateTime>("OrderDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Price")
@@ -390,7 +390,7 @@ namespace SalesManagment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrederItems");
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("SalesManagment.Entities.Product", b =>
