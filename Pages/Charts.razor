@@ -20,10 +20,10 @@
         <AccumulationChartLegendSettings Position="LegendPosition.Left" Visible="true"></AccumulationChartLegendSettings>
         <AccumulationChartSeriesCollection>
             <AccumulationChartSeries 
-                DataSource="@GroupedFieldQuantitieData"
+                DataSource="@QuantityXMonth"
                 Radius="75%" InnerRadius = "35%" Name ="Quantity X Category"
                 XName="GroupedFieldKey" YName="Quantity"
-                Explode="true" ExplodeOffset="10%" ExplodeIndex="3">
+                Explode="true" ExplodeOffset="10%" ExplodeIndex="2">
                 <AccumulationDataLabelSettings Visible="true" Name="Label">
                     <AccumulationChartDataLabelFont FontWeight="650" Color="Black">
 
@@ -38,12 +38,14 @@
 
 @code {
     List<GroupedFieldPriceModel> GroupedFieldPriceData { get; set; }
-    List<GroupedFieldQuantityModel> GroupedFieldQuantitieData { get; set; }
+    List<GroupedFieldQuantityModel> QuantityXMonth { get; set; }
+    List<GroupedFieldQuantityModel> QuantityXProductData { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         // Get the informaton to chars
-        GroupedFieldQuantitieData = await SalesOrderReportService.GetQuantityPerCategory();
+        QuantityXProductData = await SalesOrderReportService.GetQuantitiyPerMonth();
+        QuantityXMonth = await SalesOrderReportService.GetQuantityPerCategory();
         GroupedFieldPriceData = await SalesOrderReportService.GetEmployeePricePerMonth();
     }
 
