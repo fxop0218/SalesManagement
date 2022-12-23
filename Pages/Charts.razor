@@ -15,12 +15,35 @@
         </ChartSeriesCollection>
     </SfChart>
 </div>
+<div class="mt-3">
+    <SfAccumulationChart Title="Quantity / Category">
+        <AccumulationChartLegendSettings Position="LegendPosition.Left" Visible="true"></AccumulationChartLegendSettings>
+        <AccumulationChartSeriesCollection>
+            <AccumulationChartSeries 
+                DataSource="@GroupedFieldQuantitieData"
+                Radius="75%" InnerRadius = "35%" Name ="Quantity X Category"
+                XName="GroupedFieldKey" YName="Quantity"
+                Explode="true" ExplodeOffset="10%" ExplodeIndex="3">
+                <AccumulationDataLabelSettings Visible="true" Name="Label">
+                    <AccumulationChartDataLabelFont FontWeight="650" Color="Black">
+
+                    </AccumulationChartDataLabelFont>
+                </AccumulationDataLabelSettings>
+
+            </AccumulationChartSeries>
+        </AccumulationChartSeriesCollection>
+        <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+    </SfAccumulationChart>
+</div>
 
 @code {
     List<GroupedFieldPriceModel> GroupedFieldPriceData { get; set; }
+    List<GroupedFieldQuantityModel> GroupedFieldQuantitieData { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
+        // Get the informaton to chars
+        GroupedFieldQuantitieData = await SalesOrderReportService.GetQuantityPerCategory();
         GroupedFieldPriceData = await SalesOrderReportService.GetEmployeePricePerMonth();
     }
 

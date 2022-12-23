@@ -4,6 +4,7 @@ namespace SalesManagment.Services.Contracts
 {
     public interface ISalesOrderReportService
     {
+        Task<List<GroupedFieldQuantityModel>> GetQuantityPerCategory();
         Task<List<GroupedFieldPriceModel>> GetEmployeePricePerMonth();
     }
 }

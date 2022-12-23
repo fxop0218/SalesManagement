@@ -50,5 +50,25 @@ namespace SalesManagment.Services
                 throw;
             }
         }
+
+        public async Task<List<GroupedFieldQuantityModel>> GetQuantityPerCategory()
+        {
+            try
+            {
+                var repData = await (from sal in this.applicationDbContext.SalesOrderReports
+                                     group sal by sal.ProductCategoryName into GD
+                                     orderby GD.Key select new GroupedFieldQuantityModel
+                                     {
+                                         GroupedFieldKey = GD.Key,
+                                         Quantity = GD.Sum(o => o.OrderItemQty)
+                                     }).ToListAsync();
+                return repData;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
