@@ -1,6 +1,27 @@
 ﻿@page "/Charts"
+@using Syncfusion.Blazor.Charts;
+@inject ISalesOrderReportService SalesOrderReportService
+
 <h3>Charts</h3>
 
+<div class="mt-3">
+    <SfChart Title="Sales Gross / Month">
+        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+        <ChartSeriesCollection>
+            <ChartSeries DataSource="@GroupedFieldPriceData"
+                XName = "GroupedFieldKey" YName ="Price" Type="ChartSeriesType.Bar">
+
+            </ChartSeries>
+        </ChartSeriesCollection>
+    </SfChart>
+</div>
+
 @code {
+    List<GroupedFieldPriceModel> GroupedFieldPriceData { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        GroupedFieldPriceData = await SalesOrderReportService.GetEmployeePricePerMonth();
+    }
 
 }

@@ -94,7 +94,6 @@ namespace SalesManagment.Services
                                                             ClientSurname = applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClientId).Surname,
                                                             RetailOutletLocation = applicationDbContext.RetailOutlets.FirstOrDefault(r => r.Id == applicationDbContext.Clients.FirstOrDefault(c => c.Id == order.ClientId).RetailOutletId).Location
                                                         }).ToListAsync();
-                Console.WriteLine(srItems.Count);
                 this.applicationDbContext.AddRange(srItems);
                 await this.applicationDbContext.SaveChangesAsync();
             }
