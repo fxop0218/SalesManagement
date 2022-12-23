@@ -20,7 +20,7 @@
         <AccumulationChartLegendSettings Position="LegendPosition.Left" Visible="true"></AccumulationChartLegendSettings>
         <AccumulationChartSeriesCollection>
             <AccumulationChartSeries 
-                DataSource="@QuantityXMonth"
+                DataSource="@QuantityXProductData"
                 Radius="75%" InnerRadius = "35%" Name ="Quantity X Category"
                 XName="GroupedFieldKey" YName="Quantity"
                 Explode="true" ExplodeOffset="10%" ExplodeIndex="2">
@@ -35,17 +35,26 @@
         <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
     </SfAccumulationChart>
 </div>
+<div class="mt-3">
+    <SfChart Title="Quantity / Month">
+        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+        <ChartSeriesCollection>
+            <ChartSeries DataSource="@QuantityXMonthData"
+                XName="GroupedFieldKey" YName="Quantity" Type="ChartSeriesType.Line"></ChartSeries>
+        </ChartSeriesCollection>
+    </SfChart>
+</div>
 
 @code {
     List<GroupedFieldPriceModel> GroupedFieldPriceData { get; set; }
-    List<GroupedFieldQuantityModel> QuantityXMonth { get; set; }
+    List<GroupedFieldQuantityModel> QuantityXMonthData { get; set; }
     List<GroupedFieldQuantityModel> QuantityXProductData { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         // Get the informaton to chars
-        QuantityXProductData = await SalesOrderReportService.GetQuantitiyPerMonth();
-        QuantityXMonth = await SalesOrderReportService.GetQuantityPerCategory();
+        QuantityXProductData = await SalesOrderReportService.GetQuantityPerCategory();
+        QuantityXMonthData = await SalesOrderReportService.GetQuantitiyPerMonth();
         GroupedFieldPriceData = await SalesOrderReportService.GetEmployeePricePerMonth();
     }
 

@@ -56,9 +56,9 @@ namespace SalesManagment.Services
         {
             try
             {
-                var repData = await (from sal in this.applicationDbContext.SalesOrderReports
-                                     where sal.EmployeeId == 9
-                                     group sal by sal.OrderDateTime.Month into GD
+                var repData = await (from s in this.applicationDbContext.SalesOrderReports
+                                     where s.EmployeeId == 9
+                                     group s by s.OrderDateTime.Month into GD
                                      orderby GD.Key
                                      select new GroupedFieldQuantityModel
                                      {
