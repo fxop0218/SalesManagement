@@ -1000,6 +1000,29 @@
           "buildMultiTargeting/Syncfusion.Blazor.Inputs.props": {}
         }
       },
+      "Syncfusion.Blazor.Layouts/20.3.0.58": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "20.3.0.58",
+          "Syncfusion.Blazor.Data": "20.3.0.58"
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Blazor.Layouts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Blazor.Layouts.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Layouts.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Layouts.props": {}
+        }
+      },
       "Syncfusion.Blazor.Lists/20.3.0.58": {
         "type": "package",
         "dependencies": {
@@ -3134,6 +3157,30 @@
         "syncfusion_logo.png"
       ]
     },
+    "Syncfusion.Blazor.Layouts/20.3.0.58": {
+      "sha512": "M8MLsqAXcGXWpZPWYBf217NzGN3LuKOH/FNZNuE/mlpVyrUuYJeSeUK5JaC4ROiof48Zkbh9V0jk3ah1wXApyA==",
+      "type": "package",
+      "path": "syncfusion.blazor.layouts/20.3.0.58",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Layouts.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Layouts.props",
+        "buildTransitive/Syncfusion.Blazor.Layouts.props",
+        "lib/net6.0/Syncfusion.Blazor.Layouts.dll",
+        "lib/net6.0/Syncfusion.Blazor.Layouts.xml",
+        "lib/netstandard2.1/Syncfusion.Blazor.Layouts.dll",
+        "lib/netstandard2.1/Syncfusion.Blazor.Layouts.xml",
+        "staticwebassets/scripts/sf-dashboard-layout.min.js",
+        "staticwebassets/scripts/sf-splitter.min.js",
+        "syncfusion.blazor.layouts.20.3.0.58.nupkg.sha512",
+        "syncfusion.blazor.layouts.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
     "Syncfusion.Blazor.Lists/20.3.0.58": {
       "sha512": "H0Sr0enVlJrM0vNec0geeNwfzq1MXwSOZj6ut65seMrl71e1hL4JdqyMiQdDyoCzap4XhYOCJvIfLCnVqIzK9w==",
       "type": "package",
@@ -4766,6 +4813,7 @@
       "Syncfusion.Blazor.Charts >= 20.3.0.58",
       "Syncfusion.Blazor.Core >= 20.3.0.58",
       "Syncfusion.Blazor.Grid >= 20.3.0.58",
+      "Syncfusion.Blazor.Layouts >= 20.3.0.58",
       "Syncfusion.Blazor.Lists >= 20.3.0.58",
       "Syncfusion.Blazor.Notifications >= 20.3.0.58",
       "Syncfusion.Blazor.Themes >= 20.3.0.58"
@@ -4835,6 +4883,10 @@
             "version": "[20.3.0.58, )"
           },
           "Syncfusion.Blazor.Grid": {
+            "target": "Package",
+            "version": "[20.3.0.58, )"
+          },
+          "Syncfusion.Blazor.Layouts": {
             "target": "Package",
             "version": "[20.3.0.58, )"
           },

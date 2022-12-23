@@ -15,6 +15,7 @@
     <PackageReference Include="Syncfusion.Blazor.Charts" Version="20.3.0.58" />
     <PackageReference Include="Syncfusion.Blazor.Core" Version="20.3.0.58" />
     <PackageReference Include="Syncfusion.Blazor.Grid" Version="20.3.0.58" />
+    <PackageReference Include="Syncfusion.Blazor.Layouts" Version="20.3.0.58" />
     <PackageReference Include="Syncfusion.Blazor.Lists" Version="20.3.0.58" />
     <PackageReference Include="Syncfusion.Blazor.Notifications" Version="20.3.0.58" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="20.3.0.58" />

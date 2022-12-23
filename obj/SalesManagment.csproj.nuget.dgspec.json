@@ -67,6 +67,10 @@
               "target": "Package",
               "version": "[20.3.0.58, )"
             },
+            "Syncfusion.Blazor.Layouts": {
+              "target": "Package",
+              "version": "[20.3.0.58, )"
+            },
             "Syncfusion.Blazor.Lists": {
               "target": "Package",
               "version": "[20.3.0.58, )"

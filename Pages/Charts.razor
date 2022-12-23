@@ -4,6 +4,7 @@
 
 <h3>Charts</h3>
 
+<!-- Histogram chart -->
 <div class="mt-3">
     <SfChart Title="Sales Gross / Month">
         <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
@@ -15,30 +16,37 @@
         </ChartSeriesCollection>
     </SfChart>
 </div>
+
+<!-- portion chart with the quantity of products sold by category -->
 <div class="mt-3">
     <SfAccumulationChart Title="Quantity / Category">
+        <!-- Set the legend and its position -->
         <AccumulationChartLegendSettings Position="LegendPosition.Left" Visible="true"></AccumulationChartLegendSettings>
         <AccumulationChartSeriesCollection>
+            <!-- Set chart qualities -->
             <AccumulationChartSeries 
                 DataSource="@QuantityXProductData"
                 Radius="75%" InnerRadius = "35%" Name ="Quantity X Category"
                 XName="GroupedFieldKey" YName="Quantity"
                 Explode="true" ExplodeOffset="10%" ExplodeIndex="2">
+                <!-- Put labels -->
                 <AccumulationDataLabelSettings Visible="true" Name="Label">
-                    <AccumulationChartDataLabelFont FontWeight="650" Color="Black">
-
-                    </AccumulationChartDataLabelFont>
+                    <!-- Set label qualities-->
+                    <AccumulationChartDataLabelFont FontWeight="650" Color="Black"></AccumulationChartDataLabelFont>
                 </AccumulationDataLabelSettings>
-
             </AccumulationChartSeries>
         </AccumulationChartSeriesCollection>
         <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
     </SfAccumulationChart>
 </div>
+
+<!-- Line chart with quantity of products sold x Month -->
 <div class="mt-3">
     <SfChart Title="Quantity / Month">
+        <!-- Set tht type of chart -->
         <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
         <ChartSeriesCollection>
+            <!-- Set the data -->
             <ChartSeries DataSource="@QuantityXMonthData"
                 XName="GroupedFieldKey" YName="Quantity" Type="ChartSeriesType.Line"></ChartSeries>
         </ChartSeriesCollection>
