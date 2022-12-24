@@ -154,71 +154,6 @@
     DateTime previousRequestTime = DateTime.MinValue;
     private string[] palettes = new string[] { "#61EFCD", "#CDDE1F", "#FEC200", "#CA765A", "#2485FA", "#F57D7D", "#C152D2",
     "#8854D9", "#3D4EB8", "#00BCD7","#4472c4", "#ed7d31", "#ffc000", "#70ad47", "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300" };
-    public List<ChartData> ChartDataCollection { get; set; } = new List<ChartData>
-    {
-        new ChartData { Period = "Jan", Percentage = 3600 },
-        new ChartData { Period = "Feb", Percentage = 6200 },
-        new ChartData { Period = "Mar", Percentage = 8100 },
-        new ChartData { Period = "Apr", Percentage = 5900 },
-        new ChartData { Period = "May", Percentage = 8900 },
-        new ChartData { Period = "Jun", Percentage = 7200 },
-        new ChartData { Period = "Jul", Percentage = 4300 },
-        new ChartData { Period = "Aug", Percentage = 4600 },
-        new ChartData { Period = "Sep", Percentage = 5500 },
-        new ChartData { Period = "Oct", Percentage = 6350 },
-        new ChartData { Period = "Nov", Percentage = 5700 },
-        new ChartData { Period = "Dec", Percentage = 8000 }
-    };
-    public List<ChartData> ChartDataCollection1 { get; set; } = new List<ChartData>
-    {
-        new ChartData { Period = "Jan", Percentage = 6400,},
-        new ChartData { Period = "Feb", Percentage = 5300 },
-        new ChartData { Period = "Mar", Percentage = 4900 },
-        new ChartData { Period = "Apr", Percentage = 5300 },
-        new ChartData { Period = "May", Percentage = 4200 },
-        new ChartData { Period = "Jun", Percentage = 6500 },
-        new ChartData { Period = "Jul", Percentage = 7900 },
-        new ChartData { Period = "Aug", Percentage = 3800 },
-        new ChartData { Period = "Sep", Percentage = 6800 },
-        new ChartData { Period = "Oct", Percentage = 3400 },
-        new ChartData { Period = "Nov", Percentage = 6400 },
-        new ChartData { Period = "Dec", Percentage = 6800 }
-    };
-    public List<ChartData> PieChartDataCollection { get; set; } = new List<ChartData>
-    {
-        new ChartData { Product = "TV : 30 (12%)", Percentage = 12, TextMapping = "TV, 30 <br/>12%"},
-        new ChartData { Product = "PC : 20 (8%)", Percentage = 8, TextMapping = "PC, 20 <br/>8%"},
-        new ChartData { Product = "Laptop : 40 (16%)",  Percentage = 16, TextMapping = "Laptop, 40 <br/>16%"},
-        new ChartData { Product = "Mobile : 90 (36%)", Percentage = 36, TextMapping = "Mobile, 90 <br/>36%"},
-        new ChartData { Product = "Camera : 27 (11%)", Percentage = 11, TextMapping = "Camera, 27 <br/>11%"}
-    };
-    public List<ChartData> ColumnChartDataCollection { get; set; } = new List<ChartData>
-    {
-        new ChartData { Period = "2017", Percentage = 60, TextMapping = "60%" },
-        new ChartData { Period = "2018", Percentage = 56, TextMapping = "56%"},
-        new ChartData { Period = "2019", Percentage = 71, TextMapping = "71%" },
-        new ChartData { Period = "2020", Percentage = 85, TextMapping = "85%" },
-        new ChartData { Period = "2021", Percentage = 73, TextMapping = "73%" },
-    };
-    public List<ChartData> ColumnChartData { get; set; } = new List<ChartData>
-    {
-        new ChartData { Period = "2017", Percentage = 40, TextMapping = "40%" },
-        new ChartData { Period = "2018", Percentage = 44, TextMapping = "44%"},
-        new ChartData { Period = "2019", Percentage = 29, TextMapping = "29%" },
-        new ChartData { Period = "2020", Percentage = 15, TextMapping = "15%" },
-        new ChartData { Period = "2021", Percentage = 27, TextMapping = "27%" },
-    };
-    public void DataLoaded()
-    {
-        foreach (ChartData chartData in ChartDataCollection)
-        {
-            chartData.PointColor = FillColor;
-        }
-        foreach (ChartData chartData1 in ChartDataCollection1)
-        {
-            chartData1.PointColor = FillColor2;
-        }
-    }
     public void LayoutCreated()
     {
         isLayoutRender = true;
@@ -245,16 +180,6 @@
         chart2.RefreshAsync(false);
         timer.Enabled = false;
         timer.AutoReset = false;
-    }
-    public class ChartData
-    {
-        public string Period { get; set; }
-        public string Product { get; set; }
-        public double Percentage { get; set; }
-        public string TextMapping { get; set; }
-        public string AnnotationX { get; set; }
-        public string AnnotationY { get; set; }
-        public string PointColor { get; set; }
     }
 }
 <style>

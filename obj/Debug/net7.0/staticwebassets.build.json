@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9fAOaanBSsWrrWJgcPfkUilinKd71nTaIU7/aDYG/1I=",
+  "Hash": "JXWHK9Svg3qFJ9LeycSGMvNzE3BgLokLH6imB0oAxEw=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -1528,6 +1528,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Products\\IPhone14ProMax.jpg"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\JetBrains.ReSharper.web.exe",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/JetBrains.ReSharper.web.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\JetBrains.ReSharper.web.exe"
     },
     {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\m2tb.jpg",

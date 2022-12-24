@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\Images\\Products\\Install VALORANT.exe"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\JetBrains.ReSharper.web.exe",
+      "PackagePath": "staticwebassets\\Images\\Products\\JetBrains.ReSharper.web.exe"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MacBook.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\MacBook.jpg"
     },

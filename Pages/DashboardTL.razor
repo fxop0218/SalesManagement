@@ -1,0 +1,209 @@
+﻿@page "/DashboardTL"
+
+<h3>Team Leader Dashboard</h3>
+
+@using Syncfusion.Blazor.Charts
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Layouts
+@using System.Timers
+@inject NavigationManager NavigationManager
+@inject ISalesOrderReportService SalesOrderReportService
+
+<style>
+    .e-dashboardlayout {
+        padding: 20px;
+        z-index: 0;
+    }
+    .e-panel {
+        cursor: auto !important;
+    }
+    .e-panel-header{
+        border: none !important;
+        background-color: @HeaderColor;
+        height: 50px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: @TitleColor;
+    }
+</style>
+<div class="control-section">
+    <SfDashboardLayout CellSpacing="@(new double[]{15 ,15 })" CellAspectRatio="0.8" Columns="8">
+        <DashboardLayoutPanels>
+            <DashboardLayoutEvents Created="LayoutCreated"></DashboardLayoutEvents>
+            <DashboardLayoutPanel Column="0" Row="0" SizeX="4" SizeY="2">
+                <HeaderTemplate>
+                    <span class="title">Sales Gross / Team Member</span>
+                </HeaderTemplate>
+                <ContentTemplate>
+                    @if (isLayoutRender)
+                    {
+                                    <SfChart Title="Sales Gross / Month" @ref="chart1">
+                                        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+                                        <ChartSeriesCollection>
+                                            <ChartSeries DataSource="@GrossSalesPerMember"
+                                    XName = "GroupedFieldKey" YName ="Price" Type="ChartSeriesType.Bar">
+
+                                            </ChartSeries>
+                                        </ChartSeriesCollection>
+                                    </SfChart>
+                    }
+                    </ContentTemplate>
+            </DashboardLayoutPanel>
+            <DashboardLayoutPanel Column="4" Row="0" SizeX="4" SizeY="2">
+                <HeaderTemplate>
+                    <span class="title">Team Quantity Sold / Team member</span>
+                </HeaderTemplate>
+                <ContentTemplate>
+                    @if (isLayoutRender)
+                    {
+                            <SfAccumulationChart Title="Quantity / Category">
+                                <!-- Set the legend and its position -->
+                                <AccumulationChartLegendSettings Position="LegendPosition.Left" Visible="true"></AccumulationChartLegendSettings>
+                                <AccumulationChartSeriesCollection>
+                                    <!-- Set chart qualities -->
+                                    <AccumulationChartSeries 
+                                            DataSource="@QuantityPerMember"
+                                Radius="75%" InnerRadius = "35%" Name ="Quantity X Category"
+                                XName="GroupedFieldKey" YName="Quantity"
+                                Explode="true" ExplodeOffset="10%" ExplodeIndex="2">
+                                        <!-- Put labels -->
+                                        <AccumulationDataLabelSettings Visible="true" Name="Label">
+                                            <!-- Set label qualities-->
+                                            <AccumulationChartDataLabelFont FontWeight="650" Color="Black"></AccumulationChartDataLabelFont>
+                                        </AccumulationDataLabelSettings>
+                                    </AccumulationChartSeries>
+                                </AccumulationChartSeriesCollection>
+                                <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+                            </SfAccumulationChart>              
+                    }
+                    </ContentTemplate>
+            </DashboardLayoutPanel>
+            <DashboardLayoutPanel Column="0" Row="4" SizeX="8" SizeY="3">
+                <HeaderTemplate>
+                    <span class="title" style="margin-left:40%">Sales Quantity / Month</span>
+                </HeaderTemplate>
+                <ContentTemplate>
+                    @if (isLayoutRender)
+                    {
+                        <SfChart @ref="chart2" Title="Quantity Sold / Month">
+                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+                            <ChartSeriesCollection>
+                                <ChartSeries DataSource="@TeamQuantityPerMonth" 
+                                    XName="GroupedFieldKey"
+                                    YName="Quantity"
+                                    Type="ChartSeriesType.Line">
+                                </ChartSeries>
+                            </ChartSeriesCollection>
+                        </SfChart>
+                    }
+                </ContentTemplate>
+            </DashboardLayoutPanel>
+        </DashboardLayoutPanels>
+    </SfDashboardLayout>
+</div>
+<style>
+    ellipse[id*=_Trackball_1] {
+        stroke-width: 1 !important;
+        stroke: white !important;
+    }
+    .e-chart-focused:focus {
+        outline: none !important;
+    }
+</style>
+@code {
+
+    List<GroupedFieldPriceModel> GrossSalesPerMember { get; set; }
+    List<GroupedFieldQuantityModel> QuantityPerMember { get; set; }
+    List<GroupedFieldQuantityModel> TeamQuantityPerMonth { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Get the informaton to chars
+        GrossSalesPerMember = await SalesOrderReportService.GetGrossSalerPerMember();
+        QuantityPerMember = await SalesOrderReportService.GetQuantityPerMember();
+        TeamQuantityPerMonth = await SalesOrderReportService.GetTeamQuantityMonth();
+    }
+
+    // Test code
+
+    private bool isLayoutRender;
+    string Width = "100%";
+    string Height = "100%";
+    string BorderColor = "#2485FA";
+    string BorderColor2 = "#FEC200";
+    string FillColor2;
+    string FillColor;
+    string Color;
+    string Radius = "80%";
+    string HeaderColor;
+    string TitleColor;
+    string CurrentUri;
+    string valueUrl = "url";
+    double cellAspectRatio;
+    int columns, pieColumn, splineRow = 4, columnSizeX = 8, columnSizeY = 3,
+    pieSizeX, pieSizeY, splineSizeX, splineSizeY;
+    private Theme theme;
+    private static Timer timer;
+    SfChart chart1;
+    SfChart chart2;
+    SfDashboardLayout sfDashboardLayout;
+    DateTime previousRequestTime = DateTime.MinValue;
+    private string[] palettes = new string[] { "#61EFCD", "#CDDE1F", "#FEC200", "#CA765A", "#2485FA", "#F57D7D", "#C152D2",
+    "#8854D9", "#3D4EB8", "#00BCD7","#4472c4", "#ed7d31", "#ffc000", "#70ad47", "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300" };
+    public void LayoutCreated()
+    {
+        isLayoutRender = true;
+        timer = new Timer(1000);
+        timer.Elapsed += RefreshCharts;
+        timer.AutoReset = true;
+        timer.Enabled = true;
+    }
+    private async Task OnWindowResize(Syncfusion.Blazor.Layouts.ResizeArgs args)
+    {
+        const int UPDATETHRESHOLD = 200;
+        if ((previousRequestTime == DateTime.MinValue || (DateTime.Now - previousRequestTime).TotalMilliseconds > UPDATETHRESHOLD))
+        {
+            previousRequestTime = DateTime.Now;
+            await Task.Delay(UPDATETHRESHOLD);
+            await sfDashboardLayout.RefreshAsync();
+        }
+    }
+    private void RefreshCharts(Object source, ElapsedEventArgs e)
+    {
+        if (chart1 == null && chart2 == null)
+            return;
+        chart1.RefreshAsync(false);
+        chart2.RefreshAsync(false);
+        timer.Enabled = false;
+        timer.AutoReset = false;
+    }
+}
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+	#gradient-chart stop {
+        stop-color: #2485FA;        
+    }
+    #gradient-chart1 stop{
+        stop-color: #FEC200;
+    } 
+</style>
+<svg style="height: 0">
+    <defs>       
+        <linearGradient id="gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+         <linearGradient id="gradient-chart1" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+
