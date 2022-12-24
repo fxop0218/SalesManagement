@@ -13,6 +13,7 @@
           "Syncfusion.Blazor.Charts": "20.3.0.58",
           "Syncfusion.Blazor.Core": "20.3.0.58",
           "Syncfusion.Blazor.Grid": "20.3.0.58",
+          "Syncfusion.Blazor.Layouts": "20.3.0.58",
           "Syncfusion.Blazor.Lists": "20.3.0.58",
           "Syncfusion.Blazor.Notifications": "20.3.0.58",
           "Syncfusion.Blazor.Themes": "20.3.0.58"
@@ -549,6 +550,18 @@
         },
         "runtime": {
           "lib/net6.0/Syncfusion.Blazor.Inputs.dll": {
+            "assemblyVersion": "20.3.0.58",
+            "fileVersion": "20.3.0.58"
+          }
+        }
+      },
+      "Syncfusion.Blazor.Layouts/20.3.0.58": {
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "20.3.0.58",
+          "Syncfusion.Blazor.Data": "20.3.0.58"
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Blazor.Layouts.dll": {
             "assemblyVersion": "20.3.0.58",
             "fileVersion": "20.3.0.58"
           }
@@ -1290,6 +1303,13 @@
       "sha512": "sha512-6bwQZ1pEqBSN+6tqNOz0X77ynM7KcH2RlhW/Xj78zIbXUPNHdJOi0n5P4BsVZVZ5wm8XRnWuu2613Mg7pOUjRQ==",
       "path": "syncfusion.blazor.inputs/20.3.0.58",
       "hashPath": "syncfusion.blazor.inputs.20.3.0.58.nupkg.sha512"
+    },
+    "Syncfusion.Blazor.Layouts/20.3.0.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M8MLsqAXcGXWpZPWYBf217NzGN3LuKOH/FNZNuE/mlpVyrUuYJeSeUK5JaC4ROiof48Zkbh9V0jk3ah1wXApyA==",
+      "path": "syncfusion.blazor.layouts/20.3.0.58",
+      "hashPath": "syncfusion.blazor.layouts.20.3.0.58.nupkg.sha512"
     },
     "Syncfusion.Blazor.Lists/20.3.0.58": {
       "type": "package",

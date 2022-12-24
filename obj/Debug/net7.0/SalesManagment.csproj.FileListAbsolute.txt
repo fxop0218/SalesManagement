@@ -93,3 +93,4 @@ D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\runtimes\win\lib\netco
 D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.Notifications.dll
 D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.Charts.dll
 D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.DataVizCommon.dll
+D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.Layouts.dll

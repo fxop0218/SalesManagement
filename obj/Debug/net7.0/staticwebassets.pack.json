@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\Images\\Products\\IPhone14ProMax.jpg"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Install VALORANT.exe",
+      "PackagePath": "staticwebassets\\Images\\Products\\Install VALORANT.exe"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MacBook.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\MacBook.jpg"
     },
@@ -51,6 +55,10 @@
     {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\mb1.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\mb1.jpg"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\node-v18.12.1-x64.msi",
+      "PackagePath": "staticwebassets\\Images\\Products\\node-v18.12.1-x64.msi"
     },
     {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\pf1.jpg",

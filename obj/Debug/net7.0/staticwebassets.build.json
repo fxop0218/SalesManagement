@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IAuOwKPm6h5kKPeljya9MTUo1El6fzfMhtPPCAtgeYg=",
+  "Hash": "9fAOaanBSsWrrWJgcPfkUilinKd71nTaIU7/aDYG/1I=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -559,6 +559,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.inputs\\20.3.0.58\\staticwebassets\\scripts\\sf-uploader.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.layouts\\20.3.0.58\\staticwebassets\\scripts\\sf-dashboard-layout.min.js",
+      "SourceId": "Syncfusion.Blazor.Layouts",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.layouts\\20.3.0.58\\staticwebassets\\",
+      "BasePath": "_content/Syncfusion.Blazor.Layouts",
+      "RelativePath": "scripts/sf-dashboard-layout.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.layouts\\20.3.0.58\\staticwebassets\\scripts\\sf-dashboard-layout.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.layouts\\20.3.0.58\\staticwebassets\\scripts\\sf-splitter.min.js",
+      "SourceId": "Syncfusion.Blazor.Layouts",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.layouts\\20.3.0.58\\staticwebassets\\",
+      "BasePath": "_content/Syncfusion.Blazor.Layouts",
+      "RelativePath": "scripts/sf-splitter.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.layouts\\20.3.0.58\\staticwebassets\\scripts\\sf-splitter.min.js"
     },
     {
       "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.lists\\20.3.0.58\\staticwebassets\\scripts\\sf-listview.min.js",
@@ -1411,6 +1445,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\Products\\CV - Francesc  Oliveras Pérez.pdf"
     },
     {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Install VALORANT.exe",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/Install VALORANT.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\Install VALORANT.exe"
+    },
+    {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\IPhone13.jpg",
       "SourceId": "SalesManagment",
       "SourceType": "Discovered",
@@ -1528,6 +1579,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Products\\mb1.jpg"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\node-v18.12.1-x64.msi",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/node-v18.12.1-x64.msi",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\node-v18.12.1-x64.msi"
     },
     {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\pf1.jpg",
