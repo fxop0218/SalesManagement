@@ -197,6 +197,96 @@ namespace SalesManagment.Services
             }
         }
 
+        // Sales Manager
+
+        public async Task<List<LocationProductCategoryModel>> GetQuantityLocationProduct()
+        {
+            try
+            {
+                var respData = await (from loc in this.applicationDbContext.SalesOrderReports
+                                      group loc by loc.RetailOutletLocation into GD
+                                      orderby GD.Key
+                                      select new LocationProductCategoryModel
+                                      {
+                                          CPU = GD.Where(p => p.ProductCategoryId == 1).Sum(o => o.OrderItemQty),
+                                          GPU = GD.Where(p => p.ProductCategoryId == 2).Sum(o => o.OrderItemQty),
+                                          Mobiles = GD.Where(p => p.ProductCategoryId == 3).Sum(o => o.OrderItemQty),
+                                          Computers = GD.Where(p => p.ProductCategoryId == 4).Sum(o => o.OrderItemQty),
+                                          RAM = GD.Where(p => p.ProductCategoryId == 5).Sum(o => o.OrderItemQty),
+                                          SSD = GD.Where(p => p.ProductCategoryId == 6).Sum(o => o.OrderItemQty),
+                                          motherboard = GD.Where(p => p.ProductCategoryId == 7).Sum(o => o.OrderItemQty),
+                                      }).ToListAsync();
+                return respData;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<List<GroupedFieldQuantityModel>> GetQuantityPerLocation()
+        {
+            try
+            {
+                var respData = await (from loc in this.applicationDbContext.SalesOrderReports
+                                      group loc by loc.RetailOutletLocation
+                                      into GD
+                                      orderby GD.Key
+                                      select new GroupedFieldQuantityModel
+                                      {
+                                          GroupedFieldKey = GD.Key,
+                                          Quantity = GD.Sum(o => o.OrderItemQty)
+                                      }).ToListAsync();
+                return respData;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<List<MonthLocationModel>> GetQuantityPerMonthLocation()
+        {
+            try
+            {
+                var repData = await (from loc in this.applicationDbContext.SalesOrderReports
+                                     group loc by loc.OrderDateTime.Month
+                                     into GD
+                                     orderby GD.Key
+                                     select new MonthLocationModel
+                                     {
+                                         Month =
+                                         (
+                                                GD.Key == 1 ? "Jan" :
+                                                GD.Key == 2 ? "Feb" :
+                                                GD.Key == 3 ? "Mar" :
+                                                GD.Key == 4 ? "Apr" :
+                                                GD.Key == 5 ? "May" :
+                                                GD.Key == 6 ? "Jun" :
+                                                GD.Key == 7 ? "Jul" :
+                                                GD.Key == 8 ? "Aug" :
+                                                GD.Key == 9 ? "Sep" :
+                                                GD.Key == 10 ? "Oct" :
+                                                GD.Key == 11 ? "Nov" :
+                                                GD.Key == 12 ? "Dec" :
+                                                ""
+                                         ),
+                                         CA = GD.Where(p => p.RetailOutletLocation == "CA").Sum(o=>o.OrderItemQty),
+                                         NY = GD.Where(p => p.RetailOutletLocation == "NY").Sum(o => o.OrderItemQty),
+                                         TX = GD.Where(p => p.RetailOutletLocation == "TX").Sum(o => o.OrderItemQty),
+                                         WA = GD.Where(p => p.RetailOutletLocation == "WA").Sum(o => o.OrderItemQty),
+                                     }).ToListAsync();
+                return repData;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         // General fuctions
 
         private async Task<List<int>> GetMemberIds(int leaderId)
@@ -205,6 +295,7 @@ namespace SalesManagment.Services
                     .Where(emp => emp.ReportToEmpId == leaderId).Select(emp => emp.Id).ToListAsync();
             return memberIds;
         }
+
 
     }
 

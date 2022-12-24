@@ -15,5 +15,10 @@ namespace SalesManagment.Services.Contracts
         Task<List<GroupedFieldQuantityModel>> GetQuantityPerMember();
         Task<List<GroupedFieldQuantityModel>> GetTeamQuantityMonth();
         // Sales leader
+
+        Task<List<LocationProductCategoryModel>> GetQuantityLocationProduct();
+        Task<List<GroupedFieldQuantityModel>> GetQuantityPerLocation();
+        Task<List<MonthLocationModel>> GetQuantityPerMonthLocation();
+
     }
 }

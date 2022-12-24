@@ -209,7 +209,6 @@ namespace SalesManagment.Data
 
             });
         }
-    
         public static void AddProductData(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductCategory>().HasData(new ProductCategory
