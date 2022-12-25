@@ -116,9 +116,23 @@
                 <ContentTemplate>
                     @if (isLayoutRender)
                     {
- 
+                        <SfAccumulationChart Title = "Quantity / Location">
+                            <AccumulationChartLegendSettings Visible="true" Position="LegendPosition.Left"></AccumulationChartLegendSettings>
+                            <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+                            <AccumulationChartSeriesCollection>
+                                        <AccumulationChartSeries DataSource="@QuantityXLocation" 
+                                            XName = "GroupedFieldKey" YName="Quantity"
+                                            Name="QuantityXLocation" Explode="true" 
+                                            ExplodeOffset="10%" ExplodeIndex="3"
+                                            Radius="80%" InnerRadius="35%">
+                                            <AccumulationDataLabelSettings Visible="true" Name="label">
+                                                <AccumulationChartDataLabelFont FontWeight="550" Color="White"></AccumulationChartDataLabelFont>
+                                            </AccumulationDataLabelSettings>
+                                </AccumulationChartSeries>
+                            </AccumulationChartSeriesCollection>
+                        </SfAccumulationChart>
                     }
-                    </ContentTemplate>
+                </ContentTemplate>
             </DashboardLayoutPanel>
             <DashboardLayoutPanel Column="0" Row="4" SizeX="8" SizeY="3">
                 <HeaderTemplate>
@@ -127,7 +141,39 @@
                 <ContentTemplate>
                     @if (isLayoutRender)
                     {
- 
+                        <SfChart @ref ="chart2" Title="Qty / Location / Month" Width="@Width">
+                            <ChartArea><ChartAreaBorder Width="0"></ChartAreaBorder></ChartArea>
+                            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category" EdgeLabelPlacement="EdgeLabelPlacement.Shift">
+                                <ChartAxisMajorGridLines Width="0"></ChartAxisMajorGridLines>
+                            </ChartPrimaryXAxis>
+                            <ChartPrimaryYAxis Title="Quantity Sold" Minimum="0" Maximum="20" Interval="4">
+                                <ChartAxisLineStyle Width="0"></ChartAxisLineStyle>
+                                <ChartAxisMajorTickLines Width="0"></ChartAxisMajorTickLines>
+                            </ChartPrimaryYAxis>
+                            <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+                            <ChartSeriesCollection>
+                                    <ChartSeries DataSource="@GroupedFieldPriceData" Name="TX" XName="Month" Width="2"
+                                         Opacity="1" YName="TX" Type="ChartSeriesType.Line">
+                                    <ChartMarker Visible="true" Width="7" Height="7" IsFilled="true" Shape="ChartShape.Circle">
+                                    </ChartMarker>
+                                </ChartSeries>
+                                    <ChartSeries DataSource="@GroupedFieldPriceData" Name="CA" XName="Month" Width="2"
+                                         Opacity="1" YName="CA" Type="ChartSeriesType.Line">
+                                    <ChartMarker Visible="true" Width="6" IsFilled="true" Height="6" Shape="ChartShape.Triangle">
+                                    </ChartMarker>
+                                </ChartSeries>
+                                    <ChartSeries DataSource="@GroupedFieldPriceData" Name="NY" XName="Month" Width="2"
+                                         Opacity="1" YName="NY" Type="ChartSeriesType.Line">
+                                    <ChartMarker Visible="true" Width="7" IsFilled="true" Height="7" Shape="ChartShape.Diamond">
+                                    </ChartMarker>
+                                </ChartSeries>
+                                    <ChartSeries DataSource="@GroupedFieldPriceData" Name="WA" XName="Month" Width="2"
+                                         Opacity="1" YName="WA" Type="ChartSeriesType.Line">
+                                    <ChartMarker Visible="true" Width="5" IsFilled="true"  Height="5" Shape="ChartShape.Rectangle">
+                                    </ChartMarker>
+                                </ChartSeries>
+                            </ChartSeriesCollection>
+                        </SfChart>
                     }
                 </ContentTemplate>
             </DashboardLayoutPanel>
