@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Code/C\#/SalesManagment/SalesManagment/Pages/DashboardSM.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkU00ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Code/C\#/SalesManagment/SalesManagment/Pages/DashboardSR.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkU1IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

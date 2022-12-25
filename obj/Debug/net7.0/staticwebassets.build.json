@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JXWHK9Svg3qFJ9LeycSGMvNzE3BgLokLH6imB0oAxEw=",
+  "Hash": "mUYOiUY3G4S8Plv828kjUtrJv7nEBvaQ1eTH4SvebRc=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -1530,23 +1530,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\Products\\IPhone14ProMax.jpg"
     },
     {
-      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\JetBrains.ReSharper.web.exe",
-      "SourceId": "SalesManagment",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
-      "BasePath": "_content/SalesManagment",
-      "RelativePath": "Images/Products/JetBrains.ReSharper.web.exe",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Products\\JetBrains.ReSharper.web.exe"
-    },
-    {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\m2tb.jpg",
       "SourceId": "SalesManagment",
       "SourceType": "Discovered",
@@ -1700,12 +1683,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\Products\\rtx3080.jpg"
     },
     {
-      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4080",
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4080.jpg",
       "SourceId": "SalesManagment",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
       "BasePath": "_content/SalesManagment",
-      "RelativePath": "Images/Products/rtx4080",
+      "RelativePath": "Images/Products/rtx4080.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1714,7 +1697,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Products\\rtx4080"
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\rtx4080.jpg"
     },
     {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4090.jpg",

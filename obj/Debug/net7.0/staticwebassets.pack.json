@@ -37,10 +37,6 @@
       "PackagePath": "staticwebassets\\Images\\Products\\Install VALORANT.exe"
     },
     {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\JetBrains.ReSharper.web.exe",
-      "PackagePath": "staticwebassets\\Images\\Products\\JetBrains.ReSharper.web.exe"
-    },
-    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MacBook.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\MacBook.jpg"
     },
@@ -81,8 +77,8 @@
       "PackagePath": "staticwebassets\\Images\\Products\\rtx3080.jpg"
     },
     {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4080",
-      "PackagePath": "staticwebassets\\Images\\Products"
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4080.jpg",
+      "PackagePath": "staticwebassets\\Images\\Products\\rtx4080.jpg"
     },
     {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\rtx4090.jpg",

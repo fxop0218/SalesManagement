@@ -9,6 +9,18 @@ namespace SalesManagment.Services
 {
     public class SalesOrderReportService : ISalesOrderReportService
     {
+        private const string JANUARY = "Jan";
+        private const string FEBRUARY = "Feb";
+        private const string MARCH = "Mar";
+        private const string APRIL = "Apr";
+        private const string MAY = "May";
+        private const string JUNE = "Jun";
+        private const string JULY = "Jul";
+        private const string AUGUST = "Aug";
+        private const string SEPTEMBER = "Sep";
+        private const string OCTOBER = "Oct";
+        private const string NOVEMBER = "Nov";
+        private const string DECEMBER = "Dec";
         private readonly ApplicationDbContext applicationDbContext;
         public SalesOrderReportService(ApplicationDbContext applicationDbContext)
         {
@@ -26,18 +38,18 @@ namespace SalesManagment.Services
                                         select new GroupedFieldPriceModel
                                         {
                                             GroupedFieldKey = (
-                                                GD.Key == 1 ? "Jan" :
-                                                GD.Key == 2 ? "Feb" :
-                                                GD.Key == 3 ? "Mar" :
-                                                GD.Key == 4 ? "Apr" :
-                                                GD.Key == 5 ? "May" :
-                                                GD.Key == 6 ? "Jun" :
-                                                GD.Key == 7 ? "Jul" :
-                                                GD.Key == 8 ? "Aug" :
-                                                GD.Key == 9 ? "Sep" :
-                                                GD.Key == 10 ? "Oct" :
-                                                GD.Key == 11 ? "Nov" :
-                                                GD.Key == 12 ? "Dec" :
+                                                GD.Key == 1 ? JANUARY :
+                                                GD.Key == 2 ? FEBRUARY :
+                                                GD.Key == 3 ? MARCH :
+                                                GD.Key == 4 ? APRIL :
+                                                GD.Key == 5 ? MAY :
+                                                GD.Key == 6 ? JUNE :
+                                                GD.Key == 7 ? JULY :
+                                                GD.Key == 8 ? AUGUST :
+                                                GD.Key == 9 ? SEPTEMBER :
+                                                GD.Key == 10 ? OCTOBER :
+                                                GD.Key == 11 ? NOVEMBER :
+                                                GD.Key == 12 ? DECEMBER :
                                                 ""
                                             ),
                                             Price = Math.Round(GD.Sum(o => o.OrderItemPrice), 2)
@@ -64,18 +76,18 @@ namespace SalesManagment.Services
                                      select new GroupedFieldQuantityModel
                                      {
                                          GroupedFieldKey = (
-                                                GD.Key == 1 ? "Jan" :
-                                                GD.Key == 2 ? "Feb" :
-                                                GD.Key == 3 ? "Mar" :
-                                                GD.Key == 4 ? "Apr" :
-                                                GD.Key == 5 ? "May" :
-                                                GD.Key == 6 ? "Jun" :
-                                                GD.Key == 7 ? "Jul" :
-                                                GD.Key == 8 ? "Aug" :
-                                                GD.Key == 9 ? "Sep" :
-                                                GD.Key == 10 ? "Oct" :
-                                                GD.Key == 11 ? "Nov" :
-                                                GD.Key == 12 ? "Dec" :
+                                                GD.Key == 1 ? JANUARY :
+                                                GD.Key == 2 ? FEBRUARY :
+                                                GD.Key == 3 ? MARCH :
+                                                GD.Key == 4 ? APRIL :
+                                                GD.Key == 5 ? MAY :
+                                                GD.Key == 6 ? JUNE :
+                                                GD.Key == 7 ? JULY :
+                                                GD.Key == 8 ? AUGUST :
+                                                GD.Key == 9 ? SEPTEMBER :
+                                                GD.Key == 10 ? OCTOBER :
+                                                GD.Key == 11 ? NOVEMBER :
+                                                GD.Key == 12 ? DECEMBER :
                                                 ""
                                             ),
                                          Quantity = GD.Sum(o => o.OrderItemQty)
@@ -171,18 +183,18 @@ namespace SalesManagment.Services
                                      {
                                          GroupedFieldKey = 
                                          (
-                                                GD.Key == 1 ? "Jan" :
-                                                GD.Key == 2 ? "Feb" :
-                                                GD.Key == 3 ? "Mar" :
-                                                GD.Key == 4 ? "Apr" :
-                                                GD.Key == 5 ? "May" :
-                                                GD.Key == 6 ? "Jun" :
-                                                GD.Key == 7 ? "Jul" :
-                                                GD.Key == 8 ? "Aug" :
-                                                GD.Key == 9 ? "Sep" :
-                                                GD.Key == 10 ? "Oct" :
-                                                GD.Key == 11 ? "Nov" :
-                                                GD.Key == 12 ? "Dec" :
+                                                GD.Key == 1 ? JANUARY :
+                                                GD.Key == 2 ? FEBRUARY :
+                                                GD.Key == 3 ? MARCH :
+                                                GD.Key == 4 ? APRIL :
+                                                GD.Key == 5 ? MAY :
+                                                GD.Key == 6 ? JUNE :
+                                                GD.Key == 7 ? JULY :
+                                                GD.Key == 8 ? AUGUST :
+                                                GD.Key == 9 ? SEPTEMBER :
+                                                GD.Key == 10 ? OCTOBER :
+                                                GD.Key == 11 ? NOVEMBER :
+                                                GD.Key == 12 ? DECEMBER :
                                                 ""
                                          ), 
                                          Quantity = GD.Sum(o=>o.OrderItemQty)
@@ -208,6 +220,7 @@ namespace SalesManagment.Services
                                       orderby GD.Key
                                       select new LocationProductCategoryModel
                                       {
+                                          Location = GD.Key,
                                           CPU = GD.Where(p => p.ProductCategoryId == 1).Sum(o => o.OrderItemQty),
                                           GPU = GD.Where(p => p.ProductCategoryId == 2).Sum(o => o.OrderItemQty),
                                           Mobiles = GD.Where(p => p.ProductCategoryId == 3).Sum(o => o.OrderItemQty),
@@ -259,18 +272,18 @@ namespace SalesManagment.Services
                                      {
                                          Month =
                                          (
-                                                GD.Key == 1 ? "Jan" :
-                                                GD.Key == 2 ? "Feb" :
-                                                GD.Key == 3 ? "Mar" :
-                                                GD.Key == 4 ? "Apr" :
-                                                GD.Key == 5 ? "May" :
-                                                GD.Key == 6 ? "Jun" :
-                                                GD.Key == 7 ? "Jul" :
-                                                GD.Key == 8 ? "Aug" :
-                                                GD.Key == 9 ? "Sep" :
-                                                GD.Key == 10 ? "Oct" :
-                                                GD.Key == 11 ? "Nov" :
-                                                GD.Key == 12 ? "Dec" :
+                                                GD.Key == 1 ? JANUARY :
+                                                GD.Key == 2 ? FEBRUARY :
+                                                GD.Key == 3 ? MARCH :
+                                                GD.Key == 4 ? APRIL :
+                                                GD.Key == 5 ? MAY :
+                                                GD.Key == 6 ? JUNE :
+                                                GD.Key == 7 ? JULY :
+                                                GD.Key == 8 ? AUGUST :
+                                                GD.Key == 9 ? SEPTEMBER :
+                                                GD.Key == 10 ? OCTOBER :
+                                                GD.Key == 11 ? NOVEMBER :
+                                                GD.Key == 12 ? DECEMBER :
                                                 ""
                                          ),
                                          CA = GD.Where(p => p.RetailOutletLocation == "CA").Sum(o=>o.OrderItemQty),
