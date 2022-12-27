@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\Images\\Products\\Surface.jpg"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\contrato-tipo-compra-venta-vehiculos.pdf",
+      "PackagePath": "staticwebassets\\Images\\Products\\contrato-tipo-compra-venta-vehiculos.pdf"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\m2tb.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\m2tb.jpg"
     },

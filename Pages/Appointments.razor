@@ -29,7 +29,7 @@
     {
         base.OnInitialized();
         CurrentYear = DateTime.Today.Year;
-        CurrentDate = new DateTime(CurrentYear, 1, 4);
+        CurrentDate = DateTime.Now;
         dataSource = GetScheduleData();
     }
     public List<AppointmentData> GetScheduleData()

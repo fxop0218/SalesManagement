@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "josEAtokZkoo1YR7Y/DPaYVQ3KqiMRn2V5fuQWgdWkM=",
+  "Hash": "tp1t2s5Y3Vd0pxVr9ZeQHc/2Lc0u5dIr1HChzqlhZHI=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -1460,6 +1460,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Products\\13700k.jpg"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\contrato-tipo-compra-venta-vehiculos.pdf",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/contrato-tipo-compra-venta-vehiculos.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\contrato-tipo-compra-venta-vehiculos.pdf"
     },
     {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\CV - Francesc  Oliveras Pérez.pdf",
