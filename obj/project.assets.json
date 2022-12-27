@@ -916,6 +916,31 @@
           }
         }
       },
+      "Syncfusion.Blazor.Diagram/20.3.0.58": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "20.3.0.58",
+          "Syncfusion.Blazor.Data": "20.3.0.58",
+          "Syncfusion.Blazor.Navigations": "20.3.0.58",
+          "Syncfusion.Blazor.Popups": "20.3.0.58"
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Blazor.Diagram.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Blazor.Diagram.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Diagram.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Diagram.props": {}
+        }
+      },
       "Syncfusion.Blazor.DropDowns/20.3.0.58": {
         "type": "package",
         "dependencies": {
@@ -3079,6 +3104,29 @@
         "syncfusion_logo.png"
       ]
     },
+    "Syncfusion.Blazor.Diagram/20.3.0.58": {
+      "sha512": "Q9sppWlKLHkGIiWYpeQNu+HRBxdob7l2XDb1Tk8uYTs+xt/P3GCkcJMz4jTpy6B6IMV4Y7PtB6+vpj/mU8Dg2A==",
+      "type": "package",
+      "path": "syncfusion.blazor.diagram/20.3.0.58",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Diagram.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Diagram.props",
+        "buildTransitive/Syncfusion.Blazor.Diagram.props",
+        "lib/net6.0/Syncfusion.Blazor.Diagram.dll",
+        "lib/net6.0/Syncfusion.Blazor.Diagram.xml",
+        "lib/netstandard2.1/Syncfusion.Blazor.Diagram.dll",
+        "lib/netstandard2.1/Syncfusion.Blazor.Diagram.xml",
+        "staticwebassets/scripts/sf-diagramcomponent.min.js",
+        "syncfusion.blazor.diagram.20.3.0.58.nupkg.sha512",
+        "syncfusion.blazor.diagram.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
     "Syncfusion.Blazor.DropDowns/20.3.0.58": {
       "sha512": "4znIYRqmQmEagOssOrzP/d+CI4Ol5ed45xYJu3ONcKHeRVcXRX8y6HalKakg4GUHLecpCRVCoFI8QOCwOEYTuA==",
       "type": "package",
@@ -4812,6 +4860,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.1",
       "Syncfusion.Blazor.Charts >= 20.3.0.58",
       "Syncfusion.Blazor.Core >= 20.3.0.58",
+      "Syncfusion.Blazor.Diagram >= 20.3.0.58",
       "Syncfusion.Blazor.Grid >= 20.3.0.58",
       "Syncfusion.Blazor.Layouts >= 20.3.0.58",
       "Syncfusion.Blazor.Lists >= 20.3.0.58",
@@ -4879,6 +4928,10 @@
             "version": "[20.3.0.58, )"
           },
           "Syncfusion.Blazor.Core": {
+            "target": "Package",
+            "version": "[20.3.0.58, )"
+          },
+          "Syncfusion.Blazor.Diagram": {
             "target": "Package",
             "version": "[20.3.0.58, )"
           },

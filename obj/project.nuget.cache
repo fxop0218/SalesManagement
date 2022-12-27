@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y/rPYhBmRY8ERv2ikAUive28GAT/1zu920P7EGxMwZ4EVNVFNjTpQ68LxUx1n+bpig1xGobEK0fP2Dhsl2d4wA==",
+  "dgSpecHash": "zX6U/9V8mPv4a3cquHqCZQUleJsXrp21kwx5eCQjBm1V1TbjzgfyN/7vI6gmLBpAtMLY3w77WoZPltefxTzr7A==",
   "success": true,
   "projectFilePath": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\SalesManagment.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.core\\20.3.0.58\\syncfusion.blazor.core.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.data\\20.3.0.58\\syncfusion.blazor.data.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.datavizcommon\\20.3.0.58\\syncfusion.blazor.datavizcommon.20.3.0.58.nupkg.sha512",
+    "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.diagram\\20.3.0.58\\syncfusion.blazor.diagram.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.dropdowns\\20.3.0.58\\syncfusion.blazor.dropdowns.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.grid\\20.3.0.58\\syncfusion.blazor.grid.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.inputs\\20.3.0.58\\syncfusion.blazor.inputs.20.3.0.58.nupkg.sha512",

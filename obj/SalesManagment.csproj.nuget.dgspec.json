@@ -63,6 +63,10 @@
               "target": "Package",
               "version": "[20.3.0.58, )"
             },
+            "Syncfusion.Blazor.Diagram": {
+              "target": "Package",
+              "version": "[20.3.0.58, )"
+            },
             "Syncfusion.Blazor.Grid": {
               "target": "Package",
               "version": "[20.3.0.58, )"

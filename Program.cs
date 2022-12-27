@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using SalesManagment.Data;
 using SalesManagment.Services;
 using SalesManagment.Services.Contracts;
@@ -28,6 +29,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ISalesOrderReportService, SalesOrderReportService>();
+builder.Services.AddScoped<IOriganisationService, OrganisationService>();
 
 var app = builder.Build();
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");

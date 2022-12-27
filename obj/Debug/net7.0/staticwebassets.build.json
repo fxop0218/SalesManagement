@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mUYOiUY3G4S8Plv828kjUtrJv7nEBvaQ1eTH4SvebRc=",
+  "Hash": "SaZFmnDwSbMuqZEqv9lh4TIqQwfDHw1+WmddkbThmZI=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -355,6 +355,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.data\\20.3.0.58\\staticwebassets\\scripts\\data.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.diagram\\20.3.0.58\\staticwebassets\\scripts\\sf-diagramcomponent.min.js",
+      "SourceId": "Syncfusion.Blazor.Diagram",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.diagram\\20.3.0.58\\staticwebassets\\",
+      "BasePath": "_content/Syncfusion.Blazor.Diagram",
+      "RelativePath": "scripts/sf-diagramcomponent.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.diagram\\20.3.0.58\\staticwebassets\\scripts\\sf-diagramcomponent.min.js"
     },
     {
       "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.dropdowns\\20.3.0.58\\staticwebassets\\scripts\\sf-dropdownlist.min.js",
@@ -1579,6 +1596,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Products\\mb1.jpg"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MinecraftInstaller.exe",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/MinecraftInstaller.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\MinecraftInstaller.exe"
     },
     {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\node-v18.12.1-x64.msi",

@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\Images\\Products\\MacBook.jpg"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MinecraftInstaller.exe",
+      "PackagePath": "staticwebassets\\Images\\Products\\MinecraftInstaller.exe"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Razer.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\Razer.jpg"
     },

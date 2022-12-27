@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "7.0.1",
           "Syncfusion.Blazor.Charts": "20.3.0.58",
           "Syncfusion.Blazor.Core": "20.3.0.58",
+          "Syncfusion.Blazor.Diagram": "20.3.0.58",
           "Syncfusion.Blazor.Grid": "20.3.0.58",
           "Syncfusion.Blazor.Layouts": "20.3.0.58",
           "Syncfusion.Blazor.Lists": "20.3.0.58",
@@ -499,6 +500,20 @@
         },
         "runtime": {
           "lib/net6.0/Syncfusion.Blazor.DataVizCommon.dll": {
+            "assemblyVersion": "20.3.0.58",
+            "fileVersion": "20.3.0.58"
+          }
+        }
+      },
+      "Syncfusion.Blazor.Diagram/20.3.0.58": {
+        "dependencies": {
+          "Syncfusion.Blazor.Core": "20.3.0.58",
+          "Syncfusion.Blazor.Data": "20.3.0.58",
+          "Syncfusion.Blazor.Navigations": "20.3.0.58",
+          "Syncfusion.Blazor.Popups": "20.3.0.58"
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Blazor.Diagram.dll": {
             "assemblyVersion": "20.3.0.58",
             "fileVersion": "20.3.0.58"
           }
@@ -1282,6 +1297,13 @@
       "sha512": "sha512-tz3luRBC5rB2M4yOOSKh/Aw5HmcAFSxrYhqT/Wp5S+ez88F4xKbxkb3XcyzJx71qjZStQdbsi+EYCM/zo05BEA==",
       "path": "syncfusion.blazor.datavizcommon/20.3.0.58",
       "hashPath": "syncfusion.blazor.datavizcommon.20.3.0.58.nupkg.sha512"
+    },
+    "Syncfusion.Blazor.Diagram/20.3.0.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q9sppWlKLHkGIiWYpeQNu+HRBxdob7l2XDb1Tk8uYTs+xt/P3GCkcJMz4jTpy6B6IMV4Y7PtB6+vpj/mU8Dg2A==",
+      "path": "syncfusion.blazor.diagram/20.3.0.58",
+      "hashPath": "syncfusion.blazor.diagram.20.3.0.58.nupkg.sha512"
     },
     "Syncfusion.Blazor.DropDowns/20.3.0.58": {
       "type": "package",

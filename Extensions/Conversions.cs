@@ -77,5 +77,23 @@ namespace SalesManagment.Extensions
 
                           }).ToListAsync();
         }
+
+        public static async Task<List<OrganisationModel>> ConvertToH(this IQueryable<Employee> employees, ApplicationDbContext context)
+        {
+            return await (from c in employees
+                          join t in context.EmployeeJobTitles on c.EmployeeTitleId
+                          equals t.EmployeeTitleId
+                          orderby c.Id
+                          select new OrganisationModel
+                          {
+                              EMployeeId = c.Id.ToString(),
+                              ReportsToId = c.ReportToEmpId != null ? c.ReportToEmpId.ToString() : "",
+                              Email = c.Email,
+                              FirstName = c.FirstName,
+                              Surname = c.Surname,
+                              ImgPath = c.ImagePath,
+                              JobTitle = t.Name,
+                          }).ToListAsync();
+        }
     }
 }
