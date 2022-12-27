@@ -95,3 +95,4 @@ D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.Char
 D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.DataVizCommon.dll
 D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.Layouts.dll
 D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.Diagram.dll
+D:\Code\C#\SalesManagment\SalesManagment\bin\Debug\net7.0\Syncfusion.Blazor.Schedule.dll

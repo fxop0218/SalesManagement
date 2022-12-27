@@ -83,6 +83,10 @@
               "target": "Package",
               "version": "[20.3.0.58, )"
             },
+            "Syncfusion.Blazor.Schedule": {
+              "target": "Package",
+              "version": "[20.3.0.58, )"
+            },
             "Syncfusion.Blazor.Themes": {
               "target": "Package",
               "version": "[20.3.0.58, )"

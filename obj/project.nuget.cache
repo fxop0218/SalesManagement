@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zX6U/9V8mPv4a3cquHqCZQUleJsXrp21kwx5eCQjBm1V1TbjzgfyN/7vI6gmLBpAtMLY3w77WoZPltefxTzr7A==",
+  "dgSpecHash": "2M78TTHtsbbkBTOPeJBSLyDk6T8u85Y3o2wFLKWMbQVZG8X/+qNGthAs5qaJ0//Lo6ul9DDn4Qlf/Zxxph36pw==",
   "success": true,
   "projectFilePath": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\SalesManagment.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,7 @@
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.navigations\\20.3.0.58\\syncfusion.blazor.navigations.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.notifications\\20.3.0.58\\syncfusion.blazor.notifications.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.popups\\20.3.0.58\\syncfusion.blazor.popups.20.3.0.58.nupkg.sha512",
+    "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.schedule\\20.3.0.58\\syncfusion.blazor.schedule.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.spinner\\20.3.0.58\\syncfusion.blazor.spinner.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.splitbuttons\\20.3.0.58\\syncfusion.blazor.splitbuttons.20.3.0.58.nupkg.sha512",
     "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.themes\\20.3.0.58\\syncfusion.blazor.themes.20.3.0.58.nupkg.sha512",

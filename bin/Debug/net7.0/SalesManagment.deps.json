@@ -17,6 +17,7 @@
           "Syncfusion.Blazor.Layouts": "20.3.0.58",
           "Syncfusion.Blazor.Lists": "20.3.0.58",
           "Syncfusion.Blazor.Notifications": "20.3.0.58",
+          "Syncfusion.Blazor.Schedule": "20.3.0.58",
           "Syncfusion.Blazor.Themes": "20.3.0.58"
         },
         "runtime": {
@@ -632,6 +633,26 @@
         },
         "runtime": {
           "lib/net6.0/Syncfusion.Blazor.Popups.dll": {
+            "assemblyVersion": "20.3.0.58",
+            "fileVersion": "20.3.0.58"
+          }
+        }
+      },
+      "Syncfusion.Blazor.Schedule/20.3.0.58": {
+        "dependencies": {
+          "Syncfusion.Blazor.Buttons": "20.3.0.58",
+          "Syncfusion.Blazor.Calendars": "20.3.0.58",
+          "Syncfusion.Blazor.Core": "20.3.0.58",
+          "Syncfusion.Blazor.Data": "20.3.0.58",
+          "Syncfusion.Blazor.DropDowns": "20.3.0.58",
+          "Syncfusion.Blazor.Inputs": "20.3.0.58",
+          "Syncfusion.Blazor.Navigations": "20.3.0.58",
+          "Syncfusion.Blazor.Popups": "20.3.0.58",
+          "Syncfusion.Blazor.Spinner": "20.3.0.58",
+          "Syncfusion.ExcelExport.Net.Core": "20.3.0.58"
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Blazor.Schedule.dll": {
             "assemblyVersion": "20.3.0.58",
             "fileVersion": "20.3.0.58"
           }
@@ -1360,6 +1381,13 @@
       "sha512": "sha512-PeQqsIpISfqsKNmuUEK+W3wtUNAu4uvyWaFX01KmdpZVp2FK8L1ugJI9fhCkqvzEHYh5oSBuOf9bojqlRE7YJw==",
       "path": "syncfusion.blazor.popups/20.3.0.58",
       "hashPath": "syncfusion.blazor.popups.20.3.0.58.nupkg.sha512"
+    },
+    "Syncfusion.Blazor.Schedule/20.3.0.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j3XjJYw4rS2aAkCo9yUKRIRe0TKZxQX7Hq1WjfMXl6NAHJTaiZ8ZqK9a/QVr26ex7xAPGM4RlEpAPZaf//jolA==",
+      "path": "syncfusion.blazor.schedule/20.3.0.58",
+      "hashPath": "syncfusion.blazor.schedule.20.3.0.58.nupkg.sha512"
     },
     "Syncfusion.Blazor.Spinner/20.3.0.58": {
       "type": "package",

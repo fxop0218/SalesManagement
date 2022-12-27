@@ -86,7 +86,7 @@ namespace SalesManagment.Extensions
                           orderby c.Id
                           select new OrganisationModel
                           {
-                              EMployeeId = c.Id.ToString(),
+                              EmployeeId = c.Id.ToString(),
                               ReportsToId = c.ReportToEmpId != null ? c.ReportToEmpId.ToString() : "",
                               Email = c.Email,
                               FirstName = c.FirstName,

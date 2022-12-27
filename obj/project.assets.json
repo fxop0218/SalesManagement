@@ -1147,6 +1147,37 @@
           "buildMultiTargeting/Syncfusion.Blazor.Popups.props": {}
         }
       },
+      "Syncfusion.Blazor.Schedule/20.3.0.58": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Blazor.Buttons": "20.3.0.58",
+          "Syncfusion.Blazor.Calendars": "20.3.0.58",
+          "Syncfusion.Blazor.Core": "20.3.0.58",
+          "Syncfusion.Blazor.Data": "20.3.0.58",
+          "Syncfusion.Blazor.DropDowns": "20.3.0.58",
+          "Syncfusion.Blazor.Inputs": "20.3.0.58",
+          "Syncfusion.Blazor.Navigations": "20.3.0.58",
+          "Syncfusion.Blazor.Popups": "20.3.0.58",
+          "Syncfusion.Blazor.Spinner": "20.3.0.58",
+          "Syncfusion.ExcelExport.Net.Core": "20.3.0.58"
+        },
+        "compile": {
+          "lib/net6.0/Syncfusion.Blazor.Schedule.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Blazor.Schedule.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Syncfusion.Blazor.Schedule.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Syncfusion.Blazor.Schedule.props": {}
+        }
+      },
       "Syncfusion.Blazor.Spinner/20.3.0.58": {
         "type": "package",
         "dependencies": {
@@ -3331,6 +3362,29 @@
         "syncfusion_logo.png"
       ]
     },
+    "Syncfusion.Blazor.Schedule/20.3.0.58": {
+      "sha512": "j3XjJYw4rS2aAkCo9yUKRIRe0TKZxQX7Hq1WjfMXl6NAHJTaiZ8ZqK9a/QVr26ex7xAPGM4RlEpAPZaf//jolA==",
+      "type": "package",
+      "path": "syncfusion.blazor.schedule/20.3.0.58",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Syncfusion.Blazor.Schedule.props",
+        "buildMultiTargeting/Syncfusion.Blazor.Schedule.props",
+        "buildTransitive/Syncfusion.Blazor.Schedule.props",
+        "lib/net6.0/Syncfusion.Blazor.Schedule.dll",
+        "lib/net6.0/Syncfusion.Blazor.Schedule.xml",
+        "lib/netstandard2.1/Syncfusion.Blazor.Schedule.dll",
+        "lib/netstandard2.1/Syncfusion.Blazor.Schedule.xml",
+        "staticwebassets/scripts/sf-schedule.min.js",
+        "syncfusion.blazor.schedule.20.3.0.58.nupkg.sha512",
+        "syncfusion.blazor.schedule.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
     "Syncfusion.Blazor.Spinner/20.3.0.58": {
       "sha512": "dIJIjyiGtzbQkLID9OlC/qugxHjfwsqy45YE14T2lNB4VBntWyCe3SYOB807FxWMASDZshwpV5FWJTH0j2jKQQ==",
       "type": "package",
@@ -4865,6 +4919,7 @@
       "Syncfusion.Blazor.Layouts >= 20.3.0.58",
       "Syncfusion.Blazor.Lists >= 20.3.0.58",
       "Syncfusion.Blazor.Notifications >= 20.3.0.58",
+      "Syncfusion.Blazor.Schedule >= 20.3.0.58",
       "Syncfusion.Blazor.Themes >= 20.3.0.58"
     ]
   },
@@ -4948,6 +5003,10 @@
             "version": "[20.3.0.58, )"
           },
           "Syncfusion.Blazor.Notifications": {
+            "target": "Package",
+            "version": "[20.3.0.58, )"
+          },
+          "Syncfusion.Blazor.Schedule": {
             "target": "Package",
             "version": "[20.3.0.58, )"
           },

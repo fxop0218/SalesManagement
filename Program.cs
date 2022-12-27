@@ -32,6 +32,8 @@ builder.Services.AddScoped<ISalesOrderReportService, SalesOrderReportService>();
 builder.Services.AddScoped<IOriganisationService, OrganisationService>();
 
 var app = builder.Build();
+
+
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("");
 
 // Configure the HTTP request pipeline.

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SaZFmnDwSbMuqZEqv9lh4TIqQwfDHw1+WmddkbThmZI=",
+  "Hash": "josEAtokZkoo1YR7Y/DPaYVQ3KqiMRn2V5fuQWgdWkM=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -848,6 +848,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.popups\\20.3.0.58\\staticwebassets\\scripts\\sf-tooltip.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.schedule\\20.3.0.58\\staticwebassets\\scripts\\sf-schedule.min.js",
+      "SourceId": "Syncfusion.Blazor.Schedule",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.schedule\\20.3.0.58\\staticwebassets\\",
+      "BasePath": "_content/Syncfusion.Blazor.Schedule",
+      "RelativePath": "scripts/sf-schedule.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.schedule\\20.3.0.58\\staticwebassets\\scripts\\sf-schedule.min.js"
     },
     {
       "Identity": "C:\\Users\\fxop0\\.nuget\\packages\\syncfusion.blazor.spinner\\20.3.0.58\\staticwebassets\\scripts\\sf-spinner.min.js",
