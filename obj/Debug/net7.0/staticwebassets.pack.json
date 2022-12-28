@@ -9,26 +9,6 @@
       "PackagePath": "staticwebassets\\Images\\Products\\13600k.jpg"
     },
     {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\13700k.jpg",
-      "PackagePath": "staticwebassets\\Images\\Products\\13700k.jpg"
-    },
-    {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\CV - Francesc  Oliveras Pérez.pdf",
-      "PackagePath": "staticwebassets\\Images\\Products\\CV - Francesc  Oliveras Pérez.pdf"
-    },
-    {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Compra venta vehículo usado (1).pdf",
-      "PackagePath": "staticwebassets\\Images\\Products\\Compra venta vehículo usado (1).pdf"
-    },
-    {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Compra venta vehículo usado.pdf",
-      "PackagePath": "staticwebassets\\Images\\Products\\Compra venta vehículo usado.pdf"
-    },
-    {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Empadronament JCOM.pdf",
-      "PackagePath": "staticwebassets\\Images\\Products\\Empadronament JCOM.pdf"
-    },
-    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\IPhone13.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\IPhone13.jpg"
     },
@@ -45,16 +25,8 @@
       "PackagePath": "staticwebassets\\Images\\Products\\IPhone14ProMax.jpg"
     },
     {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Install VALORANT.exe",
-      "PackagePath": "staticwebassets\\Images\\Products\\Install VALORANT.exe"
-    },
-    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MacBook.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\MacBook.jpg"
-    },
-    {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\MinecraftInstaller.exe",
-      "PackagePath": "staticwebassets\\Images\\Products\\MinecraftInstaller.exe"
     },
     {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Razer.jpg",
@@ -65,20 +37,12 @@
       "PackagePath": "staticwebassets\\Images\\Products\\Surface.jpg"
     },
     {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\contrato-tipo-compra-venta-vehiculos.pdf",
-      "PackagePath": "staticwebassets\\Images\\Products\\contrato-tipo-compra-venta-vehiculos.pdf"
-    },
-    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\m2tb.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\m2tb.jpg"
     },
     {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\mb1.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\mb1.jpg"
-    },
-    {
-      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\node-v18.12.1-x64.msi",
-      "PackagePath": "staticwebassets\\Images\\Products\\node-v18.12.1-x64.msi"
     },
     {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\pf1.jpg",

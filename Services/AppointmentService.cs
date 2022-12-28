@@ -14,12 +14,12 @@ namespace SalesManagment.Services
         {
             this.applicationDbContext = applicationDbContext; 
         }
-        public async Task AddApointment(AppointmentModel appointment)
+        public async Task AddAppointment(AppointmentModel appointment)
         {
             try
             {
                 Appointment _appointment = appointment.Convert(); 
-                await this.applicationDbContext.AddAsync(appointment);
+                await this.applicationDbContext.AddAsync(_appointment);
                 await this.applicationDbContext.SaveChangesAsync();
             }
             catch (Exception)

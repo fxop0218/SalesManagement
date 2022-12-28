@@ -43,7 +43,7 @@
         if (arguments.ActionType == ActionType.EventCreate)
         {
             AppointmentModel data = arguments.AddedRecords[0];
-            await AppointmentService.AddApointment(data);
+            await AppointmentService.AddAppointment(data);
         }
     }
 

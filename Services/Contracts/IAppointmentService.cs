@@ -8,6 +8,6 @@ namespace SalesManagment.Services.Contracts
         Task<List<AppointmentModel>> GetAppointments();
         Task DeleteAppointment(int appointmentId);
         Task UpdateAppointment(AppointmentModel appointment);
-        Task AddApointment(AppointmentModel appointment);
+        Task AddAppointment(AppointmentModel appointment);
     }
 }
