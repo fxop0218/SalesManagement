@@ -17,9 +17,10 @@ var connectionStr = builder.Configuration.GetConnectionString("SalesDbConnection
 // Connect to database
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionStr));
 
-
 // Only can enter in the sistem if the user validates the email, RequireConfirmedAccount = true
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).
+    AddRoles<IdentityRole>.
+    AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -55,6 +56,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
