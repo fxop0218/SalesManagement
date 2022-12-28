@@ -6,6 +6,7 @@ using SalesManagment.Data;
 using SalesManagment.Services;
 using SalesManagment.Services.Contracts;
 using Syncfusion.Blazor; // Imported
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,10 @@ var connectionStr = builder.Configuration.GetConnectionString("SalesDbConnection
 
 // Connect to database
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionStr));
+
+
+// Only can enter in the sistem if the user validates the email, RequireConfirmedAccount = true
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

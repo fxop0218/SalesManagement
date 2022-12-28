@@ -29,12 +29,12 @@ namespace SalesManagment.Services
             }
         }
 
-        public async Task DeleteAppointment(int appointmentId)
+        public async Task DeleteAppointment(int id)
         {
             try
             {
-                Appointment? _appointment = await this.applicationDbContext.Appointments.FindAsync(appointmentId);
-                if (_appointment == null)
+                Appointment? _appointment = await this.applicationDbContext.Appointments.FindAsync(id);
+                if (_appointment != null)
                 {
                     this.applicationDbContext.Remove(_appointment);
                     await this.applicationDbContext.SaveChangesAsync();
@@ -60,22 +60,22 @@ namespace SalesManagment.Services
             }
         }
 
-        public async Task UpdateAppointment(AppointmentModel appointment)
+        public async Task UpdateAppointment(AppointmentModel appointmentMod)
         {
             try
             {
-                Appointment? _appointment = await this.applicationDbContext.Appointments.FindAsync(appointment.Id);
-                if (_appointment != null)
+                Appointment appointment = await this.applicationDbContext.Appointments.FindAsync(appointmentMod.Id);
+                if (appointment != null)
                 {
-                    _appointment.Description = appointment.Description;
-                    _appointment.IsAllDay= appointment.IsAllDay;
-                    _appointment.RecurrenceId= appointment.RecurrenceId;
-                    _appointment.RecurrenceRule = appointment.RecurrenceRule;
-                    _appointment.RecurrenceException= appointment.RecurrenceException;
-                    _appointment.StartTime = appointment.StartTime;
-                    _appointment.EndTime = appointment.EndTime;
-                    _appointment.Subject = appointment.Subject;
-                    _appointment.Location= appointment.Location;
+                    appointment.Description = appointmentMod.Description;
+                    appointment.IsAllDay= appointmentMod.IsAllDay;
+                    appointment.RecurrenceId= appointmentMod.RecurrenceId;
+                    appointment.RecurrenceRule = appointmentMod.RecurrenceRule;
+                    appointment.RecurrenceException= appointmentMod.RecurrenceException;
+                    appointment.StartTime = appointmentMod.StartTime;
+                    appointment.EndTime = appointmentMod.EndTime;
+                    appointment.Subject = appointmentMod.Subject;
+                    appointment.Location= appointmentMod.Location;
 
                     await this.applicationDbContext.SaveChangesAsync();
                 }

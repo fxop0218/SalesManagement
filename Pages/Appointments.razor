@@ -12,7 +12,7 @@
 <div class="col-lg-12 control-section">
     <SfSchedule TValue="AppointmentModel" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" @bind-CurrentView="@CurrentView" @ref="SfS">
         <ScheduleEvents TValue="AppointmentModel"
-            OnActionBegin="OnActionBeginAsync" ActionCompleted="OnActionCompletedAsync"></ScheduleEvents>
+            OnActionBegin="OnActionBeginAsync" ActionCompleted="ActionCompletedAsync"></ScheduleEvents>
         <ScheduleEventSettings DataSource="@AppointmentsData"></ScheduleEventSettings>
         <ScheduleViews>
             <ScheduleView Option="View.Day"></ScheduleView>
@@ -45,14 +45,19 @@
             AppointmentModel data = arguments.AddedRecords[0];
             await AppointmentService.AddAppointment(data);
         }
-        else if(arguments.ActionType == ActionType.EventChange)
+        else if (arguments.ActionType == ActionType.EventChange)
         {
             AppointmentModel data = arguments.ChangedRecords[0];
             await AppointmentService.UpdateAppointment(data);
         }
+        else if (arguments.ActionType == ActionType.EventRemove)
+        {
+            AppointmentModel data = arguments.DeletedRecords[0];
+            await AppointmentService.DeleteAppointment(data.Id);
+        }
     }
 
-    public async Task OnActionCompletedAsync(Syncfusion.Blazor.Schedule.ActionEventArgs<AppointmentModel> arguments)
+    public async Task ActionCompletedAsync(Syncfusion.Blazor.Schedule.ActionEventArgs<AppointmentModel> arguments)
     {
         if (arguments.ActionType == ActionType.EventCreate)
         {
