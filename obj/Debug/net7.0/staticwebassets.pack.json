@@ -17,6 +17,18 @@
       "PackagePath": "staticwebassets\\Images\\Products\\CV - Francesc  Oliveras Pérez.pdf"
     },
     {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Compra venta vehículo usado (1).pdf",
+      "PackagePath": "staticwebassets\\Images\\Products\\Compra venta vehículo usado (1).pdf"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Compra venta vehículo usado.pdf",
+      "PackagePath": "staticwebassets\\Images\\Products\\Compra venta vehículo usado.pdf"
+    },
+    {
+      "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Empadronament JCOM.pdf",
+      "PackagePath": "staticwebassets\\Images\\Products\\Empadronament JCOM.pdf"
+    },
+    {
       "Id": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\IPhone13.jpg",
       "PackagePath": "staticwebassets\\Images\\Products\\IPhone13.jpg"
     },

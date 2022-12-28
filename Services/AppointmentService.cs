@@ -51,7 +51,7 @@ namespace SalesManagment.Services
         {
             try
             {
-                return await this.applicationDbContext.Appointments.Convert();
+                return await this.applicationDbContext.Appointments.Where(e => e.EmployeeId == 9).Convert();
             }
             catch (Exception)
             {

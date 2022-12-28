@@ -100,7 +100,7 @@ namespace SalesManagment.Extensions
         {
             return new Appointment
             {
-                EmployeeId = appointment.EmployeeId,
+                EmployeeId = 9, // appointment.EmployeeId,
                 Description = appointment.Description,
                 RecurrenceId = appointment.RecurrenceId,
                 RecurrenceException = appointment.RecurrenceException,

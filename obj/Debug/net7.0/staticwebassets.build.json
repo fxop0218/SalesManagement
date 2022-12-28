@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tp1t2s5Y3Vd0pxVr9ZeQHc/2Lc0u5dIr1HChzqlhZHI=",
+  "Hash": "43KwHcppQaxP/tMVY3IcjikdX9ZUq2IYML0c/+hSbM8=",
   "Source": "SalesManagment",
   "BasePath": "_content/SalesManagment",
   "Mode": "Default",
@@ -1462,6 +1462,40 @@
       "OriginalItemSpec": "wwwroot\\Images\\Products\\13700k.jpg"
     },
     {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Compra venta vehículo usado (1).pdf",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/Compra venta vehículo usado (1).pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\Compra venta vehículo usado (1).pdf"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Compra venta vehículo usado.pdf",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/Compra venta vehículo usado.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\Compra venta vehículo usado.pdf"
+    },
+    {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\contrato-tipo-compra-venta-vehiculos.pdf",
       "SourceId": "SalesManagment",
       "SourceType": "Discovered",
@@ -1494,6 +1528,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Products\\CV - Francesc  Oliveras Pérez.pdf"
+    },
+    {
+      "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Empadronament JCOM.pdf",
+      "SourceId": "SalesManagment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\",
+      "BasePath": "_content/SalesManagment",
+      "RelativePath": "Images/Products/Empadronament JCOM.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Products\\Empadronament JCOM.pdf"
     },
     {
       "Identity": "D:\\Code\\C#\\SalesManagment\\SalesManagment\\wwwroot\\Images\\Products\\Install VALORANT.exe",
