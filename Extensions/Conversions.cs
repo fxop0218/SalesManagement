@@ -95,5 +95,40 @@ namespace SalesManagment.Extensions
                               JobTitle = t.Name,
                           }).ToListAsync();
         }
+
+        public static Appointment Convert(this AppointmentModel appointment)
+        {
+            return new Appointment
+            {
+                EmployeeId = appointment.EmployeeId,
+                Description = appointment.Description,
+                RecurrenceId = appointment.RecurrenceId,
+                RecurrenceException = appointment.RecurrenceException,
+                RecurrenceRule = appointment.RecurrenceRule,
+                StartTime = appointment.StartTime,
+                EndTime = appointment.EndTime,
+                IsAllDay = appointment.IsAllDay,
+                Location = appointment.Location,
+                Subject = appointment.Subject,
+            };
+        }
+
+        public async static Task<List<AppointmentModel>> Convert(this IQueryable<Appointment> appointments)
+        {
+            return await (from a in appointments
+                          select new AppointmentModel
+                          {
+                              EmployeeId = a.Id,
+                              Description = a.Description,
+                              RecurrenceId = a.RecurrenceId,
+                              RecurrenceException = a.RecurrenceException,
+                              RecurrenceRule = a.RecurrenceRule,
+                              StartTime = a.StartTime,
+                              EndTime = a.EndTime,
+                              IsAllDay = a.IsAllDay,
+                              Location = a.Location,
+                              Subject = a.Subject,
+                          }).ToListAsync();
+        }
     }
 }
