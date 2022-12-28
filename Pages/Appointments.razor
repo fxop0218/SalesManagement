@@ -45,6 +45,11 @@
             AppointmentModel data = arguments.AddedRecords[0];
             await AppointmentService.AddAppointment(data);
         }
+        else if(arguments.ActionType == ActionType.EventChange)
+        {
+            AppointmentModel data = arguments.ChangedRecords[0];
+            await AppointmentService.UpdateAppointment(data);
+        }
     }
 
     public async Task OnActionCompletedAsync(Syncfusion.Blazor.Schedule.ActionEventArgs<AppointmentModel> arguments)

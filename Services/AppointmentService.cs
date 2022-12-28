@@ -65,7 +65,7 @@ namespace SalesManagment.Services
             try
             {
                 Appointment? _appointment = await this.applicationDbContext.Appointments.FindAsync(appointment.Id);
-                if (_appointment == null)
+                if (_appointment != null)
                 {
                     _appointment.Description = appointment.Description;
                     _appointment.IsAllDay= appointment.IsAllDay;
