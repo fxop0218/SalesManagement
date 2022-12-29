@@ -4,15 +4,19 @@ using SalesManagment.Services.Contracts;
 using SalesManagment.Extensions;
 using SalesManagment.Data;
 using SalesManagment.Pages;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace SalesManagment.Services
 {
     public class AppointmentService : IAppointmentService
     {
         private readonly ApplicationDbContext applicationDbContext;
-        public AppointmentService(ApplicationDbContext applicationDbContext)
+        private readonly AuthenticationStateProvider asp;
+
+        public AppointmentService(ApplicationDbContext applicationDbContext, AuthenticationStateProvider asp)
         {
-            this.applicationDbContext = applicationDbContext; 
+            this.applicationDbContext = applicationDbContext;
+            this.asp = asp;
         }
         public async Task AddAppointment(AppointmentModel appointment)
         {
@@ -51,7 +55,8 @@ namespace SalesManagment.Services
         {
             try
             {
-                return await this.applicationDbContext.Appointments.Where(e => e.EmployeeId == 9).Convert();
+                var emp = await GetLoggedOnEmployee();
+                return await this.applicationDbContext.Appointments.Where(e => e.EmployeeId == emp.Id).Convert();
             }
             catch (Exception)
             {
@@ -85,6 +90,13 @@ namespace SalesManagment.Services
 
                 throw;
             }
+        }
+        private async Task<Employee> GetLoggedOnEmployee()
+        {
+            var authState = await this.asp.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            return await user.GetEmployeeObject(this.applicationDbContext);
         }
     }
 }

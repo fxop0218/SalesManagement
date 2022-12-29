@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.EntityFrameworkCore;
 using SalesManagment.Data;
 using SalesManagment.Entities;
+using SalesManagment.Extensions;
 using SalesManagment.Models.ReportModels;
 using SalesManagment.Services.Contracts;
 using Syncfusion.Blazor.Grids;
@@ -22,17 +24,21 @@ namespace SalesManagment.Services
         private const string NOVEMBER = "Nov";
         private const string DECEMBER = "Dec";
         private readonly ApplicationDbContext applicationDbContext;
-        public SalesOrderReportService(ApplicationDbContext applicationDbContext)
+        private readonly AuthenticationStateProvider asp;
+
+        public SalesOrderReportService(ApplicationDbContext applicationDbContext, AuthenticationStateProvider asp)
         {
             this.applicationDbContext = applicationDbContext;
+            this.asp = asp;
         }
         public async Task<List<GroupedFieldPriceModel>> GetEmployeePricePerMonth()
         {
             try
             {
+                var emp = await GetLoggedOnEmployee();
 
                 var reportData = await (from s in this.applicationDbContext.SalesOrderReports
-                                        where s.EmployeeId == 9 && s.OrderDateTime.Year == DateTime.Now.Year
+                                        where s.EmployeeId == emp.Id && s.OrderDateTime.Year == DateTime.Now.Year
                                         group s by s.OrderDateTime.Month into GD
                                         orderby GD.Key
                                         select new GroupedFieldPriceModel
@@ -69,8 +75,9 @@ namespace SalesManagment.Services
         {
             try
             {
+                var emp = await GetLoggedOnEmployee();
                 var repData = await (from s in this.applicationDbContext.SalesOrderReports
-                                     where s.EmployeeId == 9
+                                     where s.EmployeeId == emp.Id
                                      group s by s.OrderDateTime.Month into GD
                                      orderby GD.Key
                                      select new GroupedFieldQuantityModel
@@ -307,6 +314,14 @@ namespace SalesManagment.Services
             List<int> memberIds = await this.applicationDbContext.Employees
                     .Where(emp => emp.ReportToEmpId == leaderId).Select(emp => emp.Id).ToListAsync();
             return memberIds;
+        }
+
+        private async Task<Employee> GetLoggedOnEmployee()
+        {
+            var authState = await this.asp.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            return await user.GetEmployeeObject(this.applicationDbContext);
         }
 
 

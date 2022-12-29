@@ -130,5 +130,12 @@ namespace SalesManagment.Extensions
                               Subject = a.Subject,
                           }).ToListAsync();
         }
+        public static async Task<Employee> GetEmployeeObject(this System.Security.Claims.ClaimsPrincipal user, ApplicationDbContext applicationDbContext)
+        {
+            var emailAddress = user.Identity.Name;
+            var employee = await applicationDbContext.Employees.Where(e => e.Email.ToLower() == emailAddress.ToLower()).SingleOrDefaultAsync();
+            return employee;
+        }
     }
+
 }

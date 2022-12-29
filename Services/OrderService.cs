@@ -3,16 +3,21 @@ using SalesManagment.Services.Contracts;
 using SalesManagment.Data;
 using SalesManagment.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Components.Authorization;
+using SalesManagment.Extensions;
 
 namespace SalesManagment.Services
 {
     public class OrderService : IOrderService
     {
         private readonly ApplicationDbContext applicationDbContext;
-        public OrderService(ApplicationDbContext applicationDbContext)
+        private readonly AuthenticationStateProvider asp;
+
+        public OrderService(ApplicationDbContext applicationDbContext,
+            AuthenticationStateProvider asp)
         {
             this.applicationDbContext = applicationDbContext;
-
+            this.asp = asp;
         }
         public async Task CreateOrder(OrderModel orderModel)
         {
@@ -20,13 +25,14 @@ namespace SalesManagment.Services
             {
                 try
                 {
+                    var emp = await GetLogedOnEmployee(); 
                     //var employee = await GetLoggedOnEmployee();
 
                     Order order = new Order
                     {
                         OrderDateTime = DateTime.Now,
                         ClientId = orderModel.ClientId,
-                        EmployeeId = 9,
+                        EmployeeId = emp.Id,
                         Price = orderModel.OrderItems.Sum(o => o.Price),
                         Quantity = orderModel.OrderItems.Sum(o => o.Quantity)
                     };
@@ -102,6 +108,14 @@ namespace SalesManagment.Services
 
                 throw;
             }
+        }
+
+        private async Task<Employee> GetLogedOnEmployee()
+        {
+            var authState = await this.asp.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            return await user.GetEmployeeObject(this.applicationDbContext);
         }
     }
 }

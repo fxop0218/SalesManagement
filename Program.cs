@@ -18,9 +18,9 @@ var connectionStr = builder.Configuration.GetConnectionString("SalesDbConnection
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionStr));
 
 // Only can enter in the sistem if the user validates the email, RequireConfirmedAccount = true
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).
-    AddRoles<IdentityRole>.
-    AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -29,6 +29,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 // Necesary to use blazer sync fusion
 builder.Services.AddSyncfusionBlazor();
+
+builder.Services.AddScoped<TokenProvider>();
 
 builder.Services.AddScoped<IEmployeeManagementService, EmployeeManagementService>();
 builder.Services.AddScoped<IProductService, ProductService>();
